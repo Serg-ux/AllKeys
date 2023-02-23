@@ -1,0 +1,29 @@
+﻿<Page x:Class="AllKeys.Carrito"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AllKeys"
+      xmlns:materialDesignMahApps="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="Carrito">
+
+    <Grid>
+        <DataGrid x:Name="dgCarrito" IsReadOnly="true" HorizontalAlignment="Center" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="0,138,0,138"  Width="804">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Width="50" Binding="{Binding idSocio}"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}"/>
+                <DataGridTextColumn Header="Tipo" Binding="{Binding apellidos}"/>
+                <DataGridTextColumn Header="Tipo" Binding="{Binding direccionSocio}"/>
+                <DataGridTextColumn Header="Cantidad" Binding="{Binding dni}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel x:Name="Sp_btn" HorizontalAlignment="Center" Margin="0,587,0,0" Height="77" Orientation="Horizontal"  VerticalAlignment="Top" Width="394">
+            <Button x:Name="btComprar" Content="Comprar" FontSize="16" Height="56" Width="156" Margin="20,0,20,0"/>
+            <Button x:Name="btLimpiar" Content="Limpiar Carrito" FontSize="16" Height="56"  Margin="20,0,20,0" Width="156"/>
+
+        </StackPanel>
+
+    </Grid>
+</Page>
