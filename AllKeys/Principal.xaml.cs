@@ -39,7 +39,7 @@ namespace AllKeys
 
         private void salir_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("¿Salir a la pagina login?",
+            if (MessageBox.Show("¿Salir?",
                    "Logout",
                    MessageBoxButton.YesNo,
                    MessageBoxImage.Warning) == MessageBoxResult.Yes)
@@ -53,6 +53,11 @@ namespace AllKeys
         private void carrito_Click(object sender, RoutedEventArgs e)
         {
             frame.Content = caritoo;
+        }
+
+        private void btadminGame_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

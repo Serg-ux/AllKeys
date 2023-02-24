@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace AllKeys
 {
     /// <summary>
-    /// Lógica de interacción para Carrito.xaml
+    /// Lógica de interacción para AdminGames.xaml
     /// </summary>
-    public partial class Carrito : Page
+    public partial class AdminGames : Page
     {
-        public Carrito()
+        public AdminGames()
         {
             InitializeComponent();
-        }
-
-        private void btnComprar_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

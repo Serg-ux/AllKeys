@@ -78,9 +78,9 @@ ValidatesOnDataErrors=True}" MaxLength="20" Height="28"/>
                     <Label Content="Premium" HorizontalAlignment="Left" Height="31" Margin="10,31,0,0" VerticalAlignment="Top" Width="244" Grid.Row="1" Grid.Column="2"/>
                 </Grid>
             </GroupBox>
-            <WrapPanel Orientation="Horizontal" Grid.Row="8" HorizontalAlignment="Right" Grid.Column="1" Margin="0,36,0,0" Grid.RowSpan="2" Width="220">
-                <Button x:Name="btnBorrar" Content="Limpiar" ToolTip="eliminar"  Margin="5" FontSize="16" Height="53" Width="100" Cursor="Hand"    />
-                <Button x:Name="btnGuardar" Content="Guardar" ToolTip="guardar" FontSize="16" Height="53" Width="100"   />
+            <WrapPanel Orientation="Horizontal" Grid.Row="8" HorizontalAlignment="Right" Grid.Column="1" Margin="0,36,10,0" Grid.RowSpan="2" Width="265">
+                <Button x:Name="btnGuardar" Content="Guardar" ToolTip="guardar" FontSize="16" Margin="10,0,10,0" Height="53" Width="100"   />
+                <Button x:Name="btnBorrar" Content="Limpiar" ToolTip="eliminar"   FontSize="16" Margin="20,0,10,0" Height="53" Width="100" Cursor="Hand"    />
             </WrapPanel>
             <Button x:Name="btnVolver" Content="{materialDesign:PackIcon Kind=ArrowBack}"  ToolTip="volver inicio" Style="{DynamicResource MaterialDesignRaisedButton}"  FontSize="14" Cursor="Hand"  Height="37" Width="85" Margin="0,13,443,10" HorizontalAlignment="Right" Click="btnVolver_Click"/>
 

@@ -10,7 +10,12 @@
       Title="Carrito">
 
     <Grid>
-        <DataGrid x:Name="dgCarrito" IsReadOnly="true" HorizontalAlignment="Center" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="0,138,0,138"  Width="804">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="149*"></RowDefinition>
+            <RowDefinition Height="91*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <DataGrid x:Name="dgCarrito" IsReadOnly="true" HorizontalAlignment="Center" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="0,61,0,0"  Width="804">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="50" Binding="{Binding idSocio}"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}"/>
@@ -19,11 +24,12 @@
                 <DataGridTextColumn Header="Cantidad" Binding="{Binding dni}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel x:Name="Sp_btn" HorizontalAlignment="Center" Margin="0,587,0,0" Height="77" Orientation="Horizontal"  VerticalAlignment="Top" Width="394">
-            <Button x:Name="btComprar" Content="Comprar" FontSize="16" Height="56" Width="156" Margin="20,0,20,0"/>
-            <Button x:Name="btLimpiar" Content="Limpiar Carrito" FontSize="16" Height="56"  Margin="20,0,20,0" Width="156"/>
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,103,0,13" Width="392" Grid.Row="1">
+            <Button x:Name="btnLimpiar" Content="Limpiar Carrito" ToolTip="limpiar"   FontSize="16" Height="43"  Margin="20,0,20,0" Width="152" Cursor="Hand"    />
+            <Button x:Name="btnComprar" Content="Comprar" ToolTip="comprar"   FontSize="16" Height="43" Width="152" Cursor="Hand" Click="btnComprar_Click"    />
+        </WrapPanel>
 
-        </StackPanel>
+
 
     </Grid>
 </Page>
