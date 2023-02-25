@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace AllKeys
@@ -22,6 +23,7 @@ namespace AllKeys
         private Games game = new Games();
         private Perfil perfill = new Perfil();
         private Carrito caritoo = new Carrito();
+        private AdminGames adminGames = new AdminGames();
         public Principal()
         {
             InitializeComponent();
@@ -57,7 +59,7 @@ namespace AllKeys
 
         private void btadminGame_Click(object sender, RoutedEventArgs e)
         {
-
+            frame.Content = adminGames;
         }
     }
 }

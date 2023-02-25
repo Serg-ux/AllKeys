@@ -12,6 +12,11 @@ namespace AllKeys.DAL
     {
         public VideojuegosRepository(VentasContext context) : base(context)
         {
+           
+        }
+        public Videojuego videojuegoCompleto(int videojuegoId)
+        {
+            return Get(v => v.VideojuegoId == videojuegoId, includeProperties: "Copias").FirstOrDefault();
         }
     }
 }

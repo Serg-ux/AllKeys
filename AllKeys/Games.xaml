@@ -13,11 +13,11 @@
 
         <DataGrid x:Name="dgVideojuegos" IsReadOnly="true" HorizontalAlignment="Center" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="0,224,0,52"  Width="804">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Width="50" Binding="{Binding idSocio}"/>
-                <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}"/>
-                <DataGridTextColumn Header="Disponible" Binding="{Binding apellidos}"/>
-                <DataGridTextColumn Header="Tipo" Binding="{Binding direccionSocio}"/>
-                <DataGridTextColumn Header="Precio" Binding="{Binding dni}"/>
+                <DataGridTextColumn Header="ID" Width="50" Binding="{Binding }"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding }"/>
+                <DataGridTextColumn Header="Disponible" Binding="{Binding }"/>
+                <DataGridTextColumn Header="Tipo" Binding="{Binding }"/>
+                <DataGridTextColumn Header="Precio" Binding="{Binding }"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btnBuscar" Width="62" Height="48" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesignMahApps:PackIcon Kind=Search}" FontSize="16" Padding="0" Margin="977,133,0,0"/>

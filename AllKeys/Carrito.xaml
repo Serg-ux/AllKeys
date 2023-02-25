@@ -11,20 +11,20 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="149*"></RowDefinition>
-            <RowDefinition Height="91*"></RowDefinition>
+            <RowDefinition Height="511*"></RowDefinition>
+            <RowDefinition Height="209*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <DataGrid x:Name="dgCarrito" IsReadOnly="true" HorizontalAlignment="Center" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="0,61,0,0"  Width="804">
+        <DataGrid x:Name="dgCarrito" IsReadOnly="true" HorizontalAlignment="Center" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="0,30,0,30"  Width="804">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Width="50" Binding="{Binding idSocio}"/>
-                <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}"/>
-                <DataGridTextColumn Header="Tipo" Binding="{Binding apellidos}"/>
-                <DataGridTextColumn Header="Tipo" Binding="{Binding direccionSocio}"/>
-                <DataGridTextColumn Header="Cantidad" Binding="{Binding dni}"/>
+                <DataGridTextColumn Header="ID" Width="50" Binding="{Binding }"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding }"/>
+                <DataGridTextColumn Header="Tipo" Binding="{Binding }"/>
+                <DataGridTextColumn Header="Tipo" Binding="{Binding }"/>
+                <DataGridTextColumn Header="Cantidad" Binding="{Binding }"/>
             </DataGrid.Columns>
         </DataGrid>
-        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,103,0,13" Width="392" Grid.Row="1">
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,29,0,22" Width="392" Grid.Row="1">
             <Button x:Name="btnLimpiar" Content="Limpiar Carrito" ToolTip="limpiar"   FontSize="16" Height="43"  Margin="20,0,20,0" Width="152" Cursor="Hand"    />
             <Button x:Name="btnComprar" Content="Comprar" ToolTip="comprar"   FontSize="16" Height="43" Width="152" Cursor="Hand" Click="btnComprar_Click"    />
         </WrapPanel>
