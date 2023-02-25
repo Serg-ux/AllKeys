@@ -16,6 +16,7 @@ namespace AllKeys.DAL
         }
         public Videojuego videojuegoCompleto(int videojuegoId)
         {
+            // includeProperties  se está solicitando que las ventas asociadas a ese cliente también se carguen en la memoria.
             return Get(v => v.VideojuegoId == videojuegoId, includeProperties: "Copias").FirstOrDefault();
         }
     }
