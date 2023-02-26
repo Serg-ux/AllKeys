@@ -45,7 +45,8 @@
                 <TextBox TabIndex="2" Grid.Column="1" Grid.Row="0"  x:Name="txtCompañia" VerticalAlignment="Top" Margin="10,63,10,0" FontSize="14" Text="{Binding Path=VideojuegoCompañia, Mode=TwoWay, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"  MaxLength="30" Height="31"/>
                 <TextBox TabIndex="3" Grid.Column="1" Grid.Row="1"  x:Name="txtTipo" VerticalAlignment="Top" Margin="10,67,10,0" FontSize="14" Text="{Binding Path=Tipo, Mode=TwoWay, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" MaxLength="20" Height="27"/>
                 <TextBox TabIndex="4" Grid.Column="2"  x:Name="txtDescripcion" VerticalAlignment="Top" Margin="10,63,10,0" FontSize="14" Text="{Binding Path=Descripccion, Mode=TwoWay, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" MaxLength="200" Height="28"/>
-
+                <TextBox TabIndex="5" Grid.Column="2"  x:Name="txtDisponible" VerticalAlignment="Top" Margin="10,66,10,0" FontSize="14" Text="{Binding Path=Disponible, Mode=TwoWay, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" MaxLength="1" Height="28" Grid.Row="1"/>
+                
                 <Label Content="Nombre Videojuego" HorizontalAlignment="Left" Height="31" Margin="10,21,0,0" VerticalAlignment="Top" Width="244"/>
                 <Label Content="Compañia" HorizontalAlignment="Left" Height="31" Margin="10,21,0,0" VerticalAlignment="Top" Width="244" Grid.Column="1"/>
                 <Label Content="Descripcion" HorizontalAlignment="Left" Height="31" Margin="10,21,0,0" VerticalAlignment="Top" Width="244" Grid.Column="2"/>
@@ -60,7 +61,7 @@
             <Button x:Name="btnGuardar" Content="Borrar" ToolTip="guardar"   FontSize="16" Height="43" Margin="20,0,20,0" Width="152" Cursor="Hand"    />-->
             <Button x:Name="btnGuardar" ToolTip="guardar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=ContentSave}" Margin="5" FontSize="16" Click="btnGuardar_Click"  />
             <Button x:Name="btnBorrar" ToolTip="eliminar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=TrashCan}" Margin="5" FontSize="16" Click="btnBorrar_Click"  />
-            
+
         </WrapPanel>
 
     </Grid>

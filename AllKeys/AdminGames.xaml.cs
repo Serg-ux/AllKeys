@@ -57,19 +57,31 @@ namespace AllKeys
             String errores = Validacion.errores(videojuego);
             if (errores.Equals(""))
             {
-                if (nuevo)
+                // Intentamos convertir el valor del TextBox a double y  a int
+                if (double.TryParse(txtPrecio.Text, out double precio) && int.TryParse(txtDisponible.Text, out int disponible))
                 {
-                    bd.VideojuegosRepository.Añadir(videojuego);
-                    bd.Save();
-                    dgVideojuegos.ItemsSource = bd.VideojuegosRepository.GetAll();
+                    videojuego.Precio = precio;
+                    videojuego.Disponible = disponible;
+
+                    if (nuevo)
+                    {
+                        bd.VideojuegosRepository.Añadir(videojuego);
+                        bd.Save();
+                        dgVideojuegos.ItemsSource = bd.VideojuegosRepository.GetAll();
+                    }
+                    else
+                    {
+                        bd.VideojuegosRepository.Update(videojuego);
+                        bd.Save();
+                    }
+
+                    Limpiar();
                 }
                 else
                 {
-                    bd.VideojuegosRepository.Update(videojuego);
-                    bd.Save();
+                    // Mostramos un mensaje de error si no se pudo convertir el valor
+                    MessageBox.Show("El precio debe ser un número válido.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-
-                Limpiar();
             }
             else
             {
