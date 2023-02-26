@@ -50,10 +50,7 @@ namespace AllKeys
             nuevo = true;
         }
 
-        private void btnNuevo_Click(object sender, RoutedEventArgs e)
-        {
-          
-        }
+        
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
@@ -82,7 +79,7 @@ namespace AllKeys
 
         private void btnBorrar_Click(object sender, RoutedEventArgs e)
         {
-            if (dgVideojuegos.SelectedIndex != -1)
+            if (dgVideojuegos.SelectedIndex != null)
             {
                 bd.VideojuegosRepository.Delete(videojuego);
                 bd.Save();
