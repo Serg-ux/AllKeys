@@ -45,12 +45,12 @@
                 <Label Content="Premium" HorizontalAlignment="Left" Height="31" Margin="10,31,0,0" VerticalAlignment="Top" Width="244" Grid.Row="1" Grid.Column="2"/>
             </Grid>
         </GroupBox>
-        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="124" Grid.Row="1" Margin="1126,58,0,0">
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="164" Grid.Row="1" Margin="1086,48,0,10">
             <!--<Button x:Name="btnNuevo" Content="Nuevo" ToolTip="nuevo"   FontSize="16" Height="43" Width="152" Margin="20,0,20,0" Cursor="Hand"    />
             <Button x:Name="btnLimpiar" Content="Guardar" ToolTip="limpiar"   FontSize="16" Height="43"  Margin="20,0,20,0" Width="152" Cursor="Hand"    />
             <Button x:Name="btnGuardar" Content="Borrar" ToolTip="guardar"   FontSize="16" Height="43" Margin="20,0,20,0" Width="152" Cursor="Hand"    />-->
-            <Button x:Name="btnGuardar" ToolTip="guardar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=ContentSave}" Margin="5" FontSize="16"  Cursor="Hand"  />
-            <Button x:Name="btnBorrar" ToolTip="eliminar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=TrashCan}" Margin="5" FontSize="16"  />
+            <Button x:Name="btnGuardar" ToolTip="guardar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=ContentSave}" Margin="10" FontSize="16"  Cursor="Hand" Height="50" Width="62"  />
+            <Button x:Name="btnBorrar" ToolTip="eliminar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=TrashCan}" Margin="10" FontSize="16" Height="50" Width="62" />
 
         </WrapPanel>
     </Grid>
