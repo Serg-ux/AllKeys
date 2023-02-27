@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d" 
         d:DesignHeight="720" d:DesignWidth="1280"
-        Title="AdminGame" Height="450" Width="800">
+        Title="AdminGame" Height="720" Width="1280">
     <Grid Background="darkcyan">
         <Grid.RowDefinitions>
 
@@ -19,8 +19,8 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="50" Binding="{Binding Path=VideojuegoId}"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Path=VideojuegoName}"/>
-                <DataGridTextColumn Header="Compañia" Binding="{Binding Path= VideojuegoCompañia }"/>
-                <DataGridTextColumn Header="Descripcion" Binding="{Binding Path= Descripccion}"/>
+                <DataGridTextColumn Header="Compañia" Binding="{Binding Path= VideojuegoCompania }"/>
+                <DataGridTextColumn Header="Descripcion" Binding="{Binding Path= Descripcion}"/>
                 <DataGridTextColumn Header="Precio" Binding="{Binding  Path= Precio }"/>
                 <DataGridTextColumn Header="Tipo" Binding="{Binding Path= Tipo }"/>
                 <DataGridTextColumn Header="Disponible" Binding="{Binding Path= Disponible}"/>

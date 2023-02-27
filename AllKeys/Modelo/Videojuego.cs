@@ -15,7 +15,7 @@ namespace AllKeys.Modelo
         public string VideojuegoName { get; set; }
         [Required]
         [StringLength(maximumLength: 30, ErrorMessage = "Longitud maxima admitida 30 car")]
-        public string VideojuegoCompañia { get; set; }
+        public string VideojuegoCompania { get; set; }
         public string Descripccion { get; set; }
         [Required]
         public double Precio { get; set; }

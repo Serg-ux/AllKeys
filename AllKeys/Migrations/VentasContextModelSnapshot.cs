@@ -216,7 +216,7 @@ namespace AllKeys.Migrations
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<string>("VideojuegoCompañia")
+                    b.Property<string>("VideojuegoCompania")
                         .IsRequired()
                         .HasColumnType("nvarchar(30)")
                         .HasMaxLength(30);
@@ -238,7 +238,7 @@ namespace AllKeys.Migrations
                             Disponible = 1,
                             Precio = 12.5,
                             Tipo = "Shooter",
-                            VideojuegoCompañia = "Valve,",
+                            VideojuegoCompania = "Valve,",
                             VideojuegoName = "Csgo"
                         });
                 });

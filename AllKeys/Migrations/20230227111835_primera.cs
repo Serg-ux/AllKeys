@@ -39,7 +39,7 @@ namespace AllKeys.Migrations
                     VideojuegoId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     VideojuegoName = table.Column<string>(maxLength: 20, nullable: false),
-                    VideojuegoCompañia = table.Column<string>(maxLength: 30, nullable: false),
+                    VideojuegoCompania = table.Column<string>(maxLength: 30, nullable: false),
                     Descripccion = table.Column<string>(nullable: false),
                     Precio = table.Column<double>(nullable: false),
                     Tipo = table.Column<string>(maxLength: 20, nullable: false),
@@ -141,7 +141,7 @@ namespace AllKeys.Migrations
 
             migrationBuilder.InsertData(
                 table: "Videojuegos",
-                columns: new[] { "VideojuegoId", "Descripccion", "Disponible", "Precio", "Tipo", "VideojuegoCompañia", "VideojuegoName" },
+                columns: new[] { "VideojuegoId", "Descripccion", "Disponible", "Precio", "Tipo", "VideojuegoCompania", "VideojuegoName" },
                 values: new object[] { 1, "Juego competitivo basado en plantar bombas y cubrir", 1, 12.5, "Shooter", "Valve,", "Csgo" });
 
             migrationBuilder.InsertData(

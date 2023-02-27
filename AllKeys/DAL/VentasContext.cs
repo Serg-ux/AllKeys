@@ -151,7 +151,7 @@ namespace AllKeys.DAL
                     Disponible=1,
                     Precio=12.5,
                     Tipo="Shooter",
-                    VideojuegoCompañia="Valve,",
+                    VideojuegoCompania="Valve,",
                     VideojuegoName="Csgo"
                 }
             );
