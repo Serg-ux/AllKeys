@@ -1,23 +1,21 @@
-﻿<Page x:Class="AllKeys.AdminGames"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:AllKeys"
-      xmlns:materialDesignMahApps="http://materialdesigninxaml.net/winfx/xaml/themes"
-      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-      mc:Ignorable="d" 
-      d:DesignHeight="720" d:DesignWidth="1280"
-      Title="AdminGames">
-
-    <Grid>
+﻿<Window x:Class="AllKeys.AdminGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AllKeys"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" 
+        d:DesignHeight="720" d:DesignWidth="1280"
+        Title="AdminGame" Height="450" Width="800">
+    <Grid Background="darkcyan">
         <Grid.RowDefinitions>
 
             <RowDefinition Height="31*"/>
             <RowDefinition Height="320"/>
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="dgVideojuegos" IsReadOnly="False" HorizontalAlignment="Center" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="0,20,0,26"  Width="1080" SelectionChanged="dgVideojuegos_SelectionChanged">
+        <DataGrid x:Name="dgVideojuegos" IsReadOnly="False" HorizontalAlignment="Left" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="36,36,0,10"  Width="607" SelectionChanged="dgVideojuegos_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="50" Binding="{Binding Path=VideojuegoId}"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Path=VideojuegoName}"/>
@@ -28,7 +26,7 @@
                 <DataGridTextColumn Header="Disponible" Binding="{Binding Path= Disponible}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <GroupBox x:Name="gbFormularioV" Header="Datos de Videojuegos" Margin="100,0,100,41" Grid.Row="1" >
+        <GroupBox x:Name="gbFormularioV" Header="Datos de Videojuegos" Margin="36,0,30,41" Grid.Row="1" >
             <Grid x:Name="gContenedor5a">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -46,7 +44,7 @@
                 <TextBox TabIndex="3" Grid.Column="1" Grid.Row="1"  x:Name="txtTipo" VerticalAlignment="Top" Margin="10,67,10,0" FontSize="14" Text="{Binding Path=Tipo, Mode=TwoWay, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" MaxLength="20" Height="27"/>
                 <TextBox TabIndex="4" Grid.Column="2"  x:Name="txtDescripcion" VerticalAlignment="Top" Margin="10,63,10,0" FontSize="14" Text="{Binding Path=Descripccion, Mode=TwoWay, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" MaxLength="200" Height="28"/>
                 <TextBox TabIndex="5" Grid.Column="2"  x:Name="txtDisponible" VerticalAlignment="Top" Margin="10,66,10,0" FontSize="14" Text="{Binding Path=Disponible, Mode=TwoWay, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" MaxLength="1" Height="28" Grid.Row="1"/>
-                
+
                 <Label Content="Nombre Videojuego" HorizontalAlignment="Left" Height="31" Margin="10,21,0,0" VerticalAlignment="Top" Width="244"/>
                 <Label Content="Compañia" HorizontalAlignment="Left" Height="31" Margin="10,21,0,0" VerticalAlignment="Top" Width="244" Grid.Column="1"/>
                 <Label Content="Descripcion" HorizontalAlignment="Left" Height="31" Margin="10,21,0,0" VerticalAlignment="Top" Width="244" Grid.Column="2"/>
@@ -55,7 +53,7 @@
                 <Label Content="Disponible" HorizontalAlignment="Left" Height="31" Margin="10,31,0,0" VerticalAlignment="Top" Width="244" Grid.Row="1" Grid.Column="2"/>
             </Grid>
         </GroupBox>
-        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="124" Grid.Row="2" Margin="1056,10,0,35">
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="124" Grid.Row="2" Margin="1126,22,0,22">
             <!--<Button x:Name="btnNuevo" Content="Nuevo" ToolTip="nuevo"   FontSize="16" Height="43" Width="152" Margin="20,0,20,0" Cursor="Hand"    />
             <Button x:Name="btnLimpiar" Content="Guardar" ToolTip="limpiar"   FontSize="16" Height="43"  Margin="20,0,20,0" Width="152" Cursor="Hand"    />
             <Button x:Name="btnGuardar" Content="Borrar" ToolTip="guardar"   FontSize="16" Height="43" Margin="20,0,20,0" Width="152" Cursor="Hand"    />-->
@@ -63,6 +61,31 @@
             <Button x:Name="btnBorrar" ToolTip="eliminar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=TrashCan}" Margin="5" FontSize="16" Click="btnBorrar_Click"  />
 
         </WrapPanel>
+        <DataGrid x:Name="dgCopias" IsReadOnly="False" HorizontalAlignment="Left" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="791,36,0,10"  Width="459" SelectionChanged="dgCopias_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Width="50" Binding="{Binding CopiaId}"/>
+                <DataGridTextColumn Header="Codigo" Binding="{Binding CopiaCod}"/>
 
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="VIDEOJUEGOS" HorizontalAlignment="Left" Height="31" Margin="34,0,0,0" VerticalAlignment="Top" Width="244" />
+        <Label Content="COPIAS" HorizontalAlignment="Left" Height="31" Margin="791,5,0,0" VerticalAlignment="Top" Width="244"/>
+        <TextBox x:Name="tbCodCopia" x:Uid="Codigo Copia" materialDesign:HintAssist.Hint="Codigo Copia" 
+                            Grid.Column="0" Height="50"
+                            Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="34,18,861,18" Cursor="IBeam" Grid.Row="2" >
+            <TextBox.Text>
+                <Binding Path="CopiaCod">
+
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="124" Grid.Row="2" Margin="426,22,0,22">
+            <!--<Button x:Name="btnNuevo" Content="Nuevo" ToolTip="nuevo"   FontSize="16" Height="43" Width="152" Margin="20,0,20,0" Cursor="Hand"    />
+            <Button x:Name="btnLimpiar" Content="Guardar" ToolTip="limpiar"   FontSize="16" Height="43"  Margin="20,0,20,0" Width="152" Cursor="Hand"    />
+            <Button x:Name="btnGuardar" Content="Borrar" ToolTip="guardar"   FontSize="16" Height="43" Margin="20,0,20,0" Width="152" Cursor="Hand"    />-->
+            <Button x:Name="btnGuardar1" ToolTip="guardar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=ContentSave}" Margin="5" FontSize="16" Click="btnGuardar_Click" Cursor="Hand"  />
+            <Button x:Name="btnBorrar1" ToolTip="eliminar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=TrashCan}" Margin="5" FontSize="16" Click="btnBorrar_Click"  />
+
+        </WrapPanel>
     </Grid>
-</Page>
+</Window>

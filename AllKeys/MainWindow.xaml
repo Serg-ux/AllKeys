@@ -53,13 +53,12 @@
                       MaxLength="20"
                         />
                 </Grid>
-                <StackPanel x:Name="Sp_bts" HorizontalAlignment="Left" Margin="0,10,0,0" Height="53" Orientation="Horizontal"  VerticalAlignment="Top" Width="254" Grid.ColumnSpan="2" Grid.Row="2">
+                <StackPanel x:Name="Sp_bts" HorizontalAlignment="Left" Margin="254,125,0,0" Height="53" Orientation="Horizontal"  VerticalAlignment="Top" Width="254" Grid.ColumnSpan="2" Grid.Row="2">
                     <Button x:Name="btnEntrar" Margin="0,0,10,0" Content="Entrar" FontSize="16" TabIndex="2" Height="48" Width="114" Click="btnEntrar_Click" Cursor="Hand"/>
                     <Button x:Name="btnRegistrar" Content="Registrar"   FontSize="16" TabIndex="3" Height="48" Width="114" Click="btnRegistrar_Click"  Cursor="Hand"  />
                 </StackPanel>
-                <StackPanel x:Name="Sp_olvida" HorizontalAlignment="Right" Margin="0,121,0,0" Height="53" Orientation="Horizontal"  VerticalAlignment="Top" Width="227" Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="1">
-                    <Button  Margin="10,0,10,0" x:Name="bt_forgot_Pswd" Content="¿Contraseña olvidada?" Click="bt_forgot_Pswd_Click" FontSize="14" TabIndex="2" Height="38" Width="200" Cursor="Hand"/>
-
+                <StackPanel x:Name="Sp_olvida" HorizontalAlignment="Right" Margin="0,138,79,0" Height="36" Orientation="Horizontal"  VerticalAlignment="Top" Width="194" Grid.ColumnSpan="1" Grid.Row="1" Grid.Column="1">
+                    <Button   x:Name="bt_forgot_Pswd" Content="¿Contraseña olvidada?" BorderBrush="Transparent" Background="Transparent" Click="bt_forgot_Pswd_Click" FontSize="12" TabIndex="2" Height="38" Width="192" Cursor="Hand"/>
                 </StackPanel>
             </Grid>
         </GroupBox>

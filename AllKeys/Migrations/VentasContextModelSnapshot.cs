@@ -229,6 +229,18 @@ namespace AllKeys.Migrations
                     b.HasKey("VideojuegoId");
 
                     b.ToTable("Videojuegos");
+
+                    b.HasData(
+                        new
+                        {
+                            VideojuegoId = 1,
+                            Descripccion = "Juego competitivo basado en plantar bombas y cubrir",
+                            Disponible = 1,
+                            Precio = 12.5,
+                            Tipo = "Shooter",
+                            VideojuegoCompañia = "Valve,",
+                            VideojuegoName = "Csgo"
+                        });
                 });
 
             modelBuilder.Entity("AllKeys.Modelo.UsuarioRegistrado", b =>

@@ -12,28 +12,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Usuarios.Modelo;
 
 namespace AllKeys
 {
     /// <summary>
-    /// Lógica de interacción para AdminGames.xaml
+    /// Lógica de interacción para AdminGame.xaml
     /// </summary>
-    public partial class AdminGames : Page
+    public partial class AdminGame : Window
     {
-        Videojuego videojuego=new Videojuego();
-        UnitOfWork bd= new UnitOfWork();
+        Videojuego videojuego = new Videojuego();
+        UnitOfWork bd = new UnitOfWork();
         Boolean nuevo = true;
-        public AdminGames()
+        public AdminGame()
         {
             InitializeComponent();
             gbFormularioV.DataContext = videojuego;
-            dgVideojuegos.ItemsSource=bd.VideojuegosRepository.GetAll();
-            dgVideojuegos.SelectedIndex=-1;
+            dgVideojuegos.ItemsSource = bd.VideojuegosRepository.GetAll();
+            dgVideojuegos.SelectedIndex = -1;
         }
-
         private void dgVideojuegos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (dgVideojuegos.SelectedIndex != -1)
@@ -50,7 +48,7 @@ namespace AllKeys
             nuevo = true;
         }
 
-        
+
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
@@ -98,6 +96,11 @@ namespace AllKeys
                 Limpiar();
                 dgVideojuegos.ItemsSource = bd.VideojuegosRepository.GetAll();
             }
+        }
+
+        private void dgCopias_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:AllKeys"
       xmlns:materialDesignMahApps="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="AllKeys.Perfil"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="Perfil">
@@ -44,6 +45,13 @@
                 <Label Content="Premium" HorizontalAlignment="Left" Height="31" Margin="10,31,0,0" VerticalAlignment="Top" Width="244" Grid.Row="1" Grid.Column="2"/>
             </Grid>
         </GroupBox>
-        <Button x:Name="btGuardar" Content="Guardar" ToolTip="guardar" FontSize="16"  Cursor="Hand" Grid.Row="1" Width="150" Height="50"/>
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="124" Grid.Row="1" Margin="1126,58,0,0">
+            <!--<Button x:Name="btnNuevo" Content="Nuevo" ToolTip="nuevo"   FontSize="16" Height="43" Width="152" Margin="20,0,20,0" Cursor="Hand"    />
+            <Button x:Name="btnLimpiar" Content="Guardar" ToolTip="limpiar"   FontSize="16" Height="43"  Margin="20,0,20,0" Width="152" Cursor="Hand"    />
+            <Button x:Name="btnGuardar" Content="Borrar" ToolTip="guardar"   FontSize="16" Height="43" Margin="20,0,20,0" Width="152" Cursor="Hand"    />-->
+            <Button x:Name="btnGuardar" ToolTip="guardar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=ContentSave}" Margin="5" FontSize="16"  Cursor="Hand"  />
+            <Button x:Name="btnBorrar" ToolTip="eliminar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=TrashCan}" Margin="5" FontSize="16"  />
+
+        </WrapPanel>
     </Grid>
 </Page>

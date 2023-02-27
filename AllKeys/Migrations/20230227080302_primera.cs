@@ -132,17 +132,17 @@ namespace AllKeys.Migrations
             migrationBuilder.InsertData(
                 table: "Roles",
                 columns: new[] { "RolId", "RolNombre" },
-                values: new object[] { 1, "Admin" });
+                values: new object[,]
+                {
+                    { 1, "Admin" },
+                    { 2, "Usuario" },
+                    { 3, "Premium" }
+                });
 
             migrationBuilder.InsertData(
-                table: "Roles",
-                columns: new[] { "RolId", "RolNombre" },
-                values: new object[] { 2, "Usuario" });
-
-            migrationBuilder.InsertData(
-                table: "Roles",
-                columns: new[] { "RolId", "RolNombre" },
-                values: new object[] { 3, "Premium" });
+                table: "Videojuegos",
+                columns: new[] { "VideojuegoId", "Descripccion", "Disponible", "Precio", "Tipo", "VideojuegoCompañia", "VideojuegoName" },
+                values: new object[] { 1, "Juego competitivo basado en plantar bombas y cubrir", 1, 12.5, "Shooter", "Valve,", "Csgo" });
 
             migrationBuilder.InsertData(
                 table: "Usuarios",

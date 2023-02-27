@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AllKeys.Migrations
 {
     [DbContext(typeof(VentasContext))]
-    [Migration("20230216110727_primera")]
+    [Migration("20230227080302_primera")]
     partial class primera
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -231,6 +231,18 @@ namespace AllKeys.Migrations
                     b.HasKey("VideojuegoId");
 
                     b.ToTable("Videojuegos");
+
+                    b.HasData(
+                        new
+                        {
+                            VideojuegoId = 1,
+                            Descripccion = "Juego competitivo basado en plantar bombas y cubrir",
+                            Disponible = 1,
+                            Precio = 12.5,
+                            Tipo = "Shooter",
+                            VideojuegoCompañia = "Valve,",
+                            VideojuegoName = "Csgo"
+                        });
                 });
 
             modelBuilder.Entity("AllKeys.Modelo.UsuarioRegistrado", b =>

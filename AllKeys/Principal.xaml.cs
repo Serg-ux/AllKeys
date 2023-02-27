@@ -23,7 +23,7 @@ namespace AllKeys
         private Games game = new Games();
         private Perfil perfill = new Perfil();
         private Carrito caritoo = new Carrito();
-        private AdminGames adminGames = new AdminGames();
+       
         public Principal()
         {
             InitializeComponent();
@@ -59,7 +59,9 @@ namespace AllKeys
 
         private void btadminGame_Click(object sender, RoutedEventArgs e)
         {
-            frame.Content = adminGames;
+            AdminGame adminGame =new AdminGame();
+            adminGame.Show();
+            this.Close();
         }
     }
 }

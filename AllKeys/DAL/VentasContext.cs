@@ -143,6 +143,18 @@ namespace AllKeys.DAL
                     RolId = 3
                 }
             );
+            modelBuilder.Entity<Videojuego>().HasData(
+                new Videojuego
+                {
+                    VideojuegoId = 1,
+                    Descripccion="Juego competitivo basado en plantar bombas y cubrir",
+                    Disponible=1,
+                    Precio=12.5,
+                    Tipo="Shooter",
+                    VideojuegoCompañia="Valve,",
+                    VideojuegoName="Csgo"
+                }
+            );
             
             
         }
