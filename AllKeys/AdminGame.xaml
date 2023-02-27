@@ -15,12 +15,12 @@
             <RowDefinition Height="320"/>
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="dgVideojuegos" IsReadOnly="False" HorizontalAlignment="Left" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="36,36,0,10"  Width="607" SelectionChanged="dgVideojuegos_SelectionChanged">
+        <DataGrid x:Name="dgVideojuegos" IsReadOnly="False" HorizontalAlignment="Left" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="36,36,0,10"  Width="727" SelectionChanged="dgVideojuegos_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="50" Binding="{Binding Path=VideojuegoId}"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Path=VideojuegoName}"/>
                 <DataGridTextColumn Header="Compañia" Binding="{Binding Path= VideojuegoCompania }"/>
-                <DataGridTextColumn Header="Descripcion" Binding="{Binding Path= Descripcion}"/>
+                <DataGridTextColumn Header="Descripcion" Binding="{Binding Path= Descripccion}"/>
                 <DataGridTextColumn Header="Precio" Binding="{Binding  Path= Precio }"/>
                 <DataGridTextColumn Header="Tipo" Binding="{Binding Path= Tipo }"/>
                 <DataGridTextColumn Header="Disponible" Binding="{Binding Path= Disponible}"/>
