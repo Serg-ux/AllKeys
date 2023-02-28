@@ -102,13 +102,5 @@ namespace AllKeys
         {
 
         }
-
-        private void btnNuevoGame_Click(object sender, RoutedEventArgs e)
-        {
-            videojuego = new Videojuego();
-            gbFormularioV.DataContext = videojuego;
-            nuevo = true;
-            dgVideojuegos.ItemsSource = bd.VideojuegosRepository.GetAll();
-        }
     }
 }

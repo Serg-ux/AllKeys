@@ -54,8 +54,7 @@
                 <Label Content="Premium" HorizontalAlignment="Left" Height="31" Margin="10,31,0,0" VerticalAlignment="Top" Width="244" Grid.Row="1" Grid.Column="2"/>
             </Grid>
         </GroupBox>
-        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="205" Grid.Row="2" Margin="1028,10,0,10">
-            <Button x:Name="btnNuevo" ToolTip="nuevo" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=Add}" Margin="10" FontSize="16" Cursor="Hand"   />
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="147" Grid.Row="2" Margin="1086,10,0,10">
             <Button x:Name="btnGuardar" ToolTip="guardar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=ContentSave}" Margin="10" FontSize="16"   />
             <Button x:Name="btnBorrar" ToolTip="eliminar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=TrashCan}" Margin="10" FontSize="16"  />
 
