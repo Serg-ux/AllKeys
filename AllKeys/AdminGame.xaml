@@ -55,7 +55,7 @@
             </Grid>
         </GroupBox>
         <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="206" Grid.Row="2" Margin="1044,10,0,10">
-            <Button x:Name="btnNuevoGame" ToolTip="nuevo juego" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=Add}" Margin="10" FontSize="16"   />
+            <Button x:Name="btnNuevoGame" ToolTip="nuevo juego" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=Add}" Margin="10" FontSize="16" Click="btnNuevoGame_Click"   />
             <Button x:Name="btnGuardar" ToolTip="guardar juego" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=ContentSave}" Margin="10" FontSize="16" Click="btnGuardar_Click"  />
             <Button x:Name="btnBorrar" ToolTip="eliminar juego" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=TrashCan}" Margin="10" FontSize="16" Click="btnBorrar_Click"  />
 
