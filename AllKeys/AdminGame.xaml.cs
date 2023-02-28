@@ -89,7 +89,8 @@ namespace AllKeys
 
         private void btnBorrar_Click(object sender, RoutedEventArgs e)
         {
-            if (dgVideojuegos.SelectedIndex != null)
+            if (dgVideojuegos.SelectedIndex !=-1)
+            if (dgVideojuegos.SelectedIndex !=-1)
             {
                 bd.VideojuegosRepository.Delete(videojuego);
                 bd.Save();

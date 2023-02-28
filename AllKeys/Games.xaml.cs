@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AllKeys.Modelo;
+using ExamenVentas.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,13 @@ namespace AllKeys
     /// </summary>
     public partial class Games : Page
     {
+        Videojuego videojuego = new Videojuego();
+        UnitOfWork bd = new UnitOfWork();
         public Games()
         {
             InitializeComponent();
+            dgVideojuegos.ItemsSource = bd.VideojuegosRepository.GetAll();
+            dgVideojuegos.SelectedIndex = -1;
         }
     }
 }
