@@ -15,7 +15,9 @@
         
          ShowInTaskbar="False">
     <Grid Name="gContenido" Background="#02735E" IsEnabled="True" Visibility="Visible">
+
         <Grid x:Name="gContenidoUs" Background="#02735E"  IsEnabled="True" Visibility="Visible">
+
             <Grid.RowDefinitions>
                 <RowDefinition Height="49*" />
                 <RowDefinition Height="188*" />
@@ -23,7 +25,9 @@
 
             </Grid.RowDefinitions>
 
-
+            <WrapPanel>
+                <Button x:Name="btnVolver" Content="{materialDesign:PackIcon Kind=ArrowBack}"  ToolTip="volver inicio" Style="{DynamicResource MaterialDesignRaisedButton}"  FontSize="14" Grid.Row="0" Cursor="Hand" Width="74" Margin="20,33,0,33" HorizontalAlignment="Left" Click="btnVolver_Click" Height="26"/>
+            </WrapPanel>
             <GroupBox x:Name="gbFormulario" Header="Datos de usuario" Margin="20,16,0,0" Grid.Row="1" >
                 <Grid x:Name="gContenedor5a">
                     <Grid.RowDefinitions>
@@ -52,13 +56,13 @@ ValidatesOnDataErrors=True}"  MaxLength="9" Height="31"/>
 UpdateSourceTrigger=PropertyChanged
 , NotifyOnValidationError=True,
 ValidatesOnDataErrors=True}" MaxLength="40" Height="27"/>
-                    <ComboBox TabIndex="8" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" 
-     materialDesign:HintAssist.Hint="rol" Style="{StaticResource MaterialDesignComboBox}" x:Name="cbRol"  Margin="10,63,10,0" FontSize="14" SelectedValue="{Binding Path=Rol, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged
+                    <ComboBox TabIndex="8" Grid.Row="1" Grid.Column="2" VerticalAlignment="Top" 
+     materialDesign:HintAssist.Hint="rol" Style="{StaticResource MaterialDesignComboBox}" x:Name="cbRol"  Margin="10,95,10,0" FontSize="14" SelectedValue="{Binding Path=Rol, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged
 , NotifyOnValidationError=True,
 ValidatesOnDataErrors=True}">
 
                     </ComboBox>
-                    <TextBox TabIndex="7" Grid.Column="2"  x:Name="txtColorFav" VerticalAlignment="Top" Margin="10,63,10,0" FontSize="14" Text="{Binding Path=direccionSocio, Mode=TwoWay,
+                    <TextBox TabIndex="7" Grid.Column="2"  x:Name="txtColorFav" VerticalAlignment="Top" Margin="10,66,10,0" FontSize="14" Text="{Binding Path=direccionSocio, Mode=TwoWay,
 UpdateSourceTrigger=PropertyChanged
 , NotifyOnValidationError=True,
 ValidatesOnDataErrors=True}" MaxLength="20" Height="28"/>
@@ -70,13 +74,12 @@ ValidatesOnDataErrors=True}" MaxLength="20" Height="28"/>
                     <Label Content="Premium" HorizontalAlignment="Left" Height="31" Margin="10,31,0,0" VerticalAlignment="Top" Width="244" Grid.Row="1" Grid.Column="2"/>
                 </Grid>
             </GroupBox>
+
             <WrapPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right"  Width="168" Margin="0,10,0,0">
                 <Button x:Name="btnGuardar" ToolTip="guardar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=ContentSave}" Margin="10" FontSize="16"  Cursor="Hand" Height="50" Width="62"  />
                 <Button x:Name="btnBorrar" ToolTip="eliminar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=TrashCan}" Margin="10" FontSize="16" Height="50" Width="62" />
             </WrapPanel>
-            <WrapPanel>
-                <Button x:Name="btnVolver" Content="{materialDesign:PackIcon Kind=ArrowBack}"  ToolTip="volver inicio" Style="{DynamicResource MaterialDesignRaisedButton}"  FontSize="14" Grid.Row="0" Cursor="Hand" Width="85" Margin="20,33,0,33" HorizontalAlignment="Left" Click="btnVolver_Click"/>
-            </WrapPanel>
+
 
         </Grid>
     </Grid>

@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:AllKeys"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d" 
+         WindowStartupLocation="CenterScreen"
         d:DesignHeight="720" d:DesignWidth="1280"
         Title="AdminGame" Height="720" Width="1280">
     <Grid Background="darkcyan">
@@ -53,10 +54,8 @@
                 <Label Content="Disponible" HorizontalAlignment="Left" Height="31" Margin="10,31,0,0" VerticalAlignment="Top" Width="244" Grid.Row="1" Grid.Column="2"/>
             </Grid>
         </GroupBox>
-        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="144" Grid.Row="2" Margin="1126,10,0,10">
-            <!--<Button x:Name="btnNuevo" Content="Nuevo" ToolTip="nuevo"   FontSize="16" Height="43" Width="152" Margin="20,0,20,0" Cursor="Hand"    />
-            <Button x:Name="btnLimpiar" Content="Guardar" ToolTip="limpiar"   FontSize="16" Height="43"  Margin="20,0,20,0" Width="152" Cursor="Hand"    />
-            <Button x:Name="btnGuardar" Content="Borrar" ToolTip="guardar"   FontSize="16" Height="43" Margin="20,0,20,0" Width="152" Cursor="Hand"    />-->
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="206" Grid.Row="2" Margin="1044,10,0,10">
+            <Button x:Name="btnNuevoGame" ToolTip="nuevo" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=Add}" Margin="10" FontSize="16"   />
             <Button x:Name="btnGuardar" ToolTip="guardar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=ContentSave}" Margin="10" FontSize="16" Click="btnGuardar_Click"  />
             <Button x:Name="btnBorrar" ToolTip="eliminar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=TrashCan}" Margin="10" FontSize="16" Click="btnBorrar_Click"  />
 
@@ -79,10 +78,8 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="124" Grid.Row="2" Margin="424,10,0,-10">
-            <!--<Button x:Name="btnNuevo" Content="Nuevo" ToolTip="nuevo"   FontSize="16" Height="43" Width="152" Margin="20,0,20,0" Cursor="Hand"    />
-            <Button x:Name="btnLimpiar" Content="Guardar" ToolTip="limpiar"   FontSize="16" Height="43"  Margin="20,0,20,0" Width="152" Cursor="Hand"    />
-            <Button x:Name="btnGuardar" Content="Borrar" ToolTip="guardar"   FontSize="16" Height="43" Margin="20,0,20,0" Width="152" Cursor="Hand"    />-->
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="188" Grid.Row="2" Margin="424,10,0,-10">
+            <Button x:Name="btnNuevoCopia" ToolTip="nuevo" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=Add}" Margin="10" FontSize="16"   />
             <Button x:Name="btnGuardar1" ToolTip="guardar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=ContentSave}" Margin="5" FontSize="16" Click="btnGuardar_Click" Cursor="Hand"  />
             <Button x:Name="btnBorrar1" ToolTip="eliminar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=TrashCan}" Margin="5" FontSize="16" Click="btnBorrar_Click"  />
 

@@ -61,7 +61,14 @@ namespace AllKeys
         {
             AdminGame adminGame =new AdminGame();
             adminGame.Show();
-            this.Close();
+            
+        }
+
+        private void btadminUser_Click(object sender, RoutedEventArgs e)
+        {
+            AdminUser adminUser =new AdminUser();
+            adminUser.Show();
+           
         }
     }
 }
