@@ -55,9 +55,9 @@
             </Grid>
         </GroupBox>
         <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="206" Grid.Row="2" Margin="1044,10,0,10">
-            <Button x:Name="btnNuevoGame" ToolTip="nuevo" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=Add}" Margin="10" FontSize="16"   />
-            <Button x:Name="btnGuardar" ToolTip="guardar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=ContentSave}" Margin="10" FontSize="16" Click="btnGuardar_Click"  />
-            <Button x:Name="btnBorrar" ToolTip="eliminar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=TrashCan}" Margin="10" FontSize="16" Click="btnBorrar_Click"  />
+            <Button x:Name="btnNuevoGame" ToolTip="nuevo juego" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=Add}" Margin="10" FontSize="16"   />
+            <Button x:Name="btnGuardar" ToolTip="guardar juego" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=ContentSave}" Margin="10" FontSize="16" Click="btnGuardar_Click"  />
+            <Button x:Name="btnBorrar" ToolTip="eliminar juego" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=TrashCan}" Margin="10" FontSize="16" Click="btnBorrar_Click"  />
 
         </WrapPanel>
         <DataGrid x:Name="dgCopias" IsReadOnly="False" HorizontalAlignment="Left" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="791,36,0,10"  Width="459" SelectionChanged="dgCopias_SelectionChanged">
@@ -79,9 +79,9 @@
             </TextBox.Text>
         </TextBox>
         <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="188" Grid.Row="2" Margin="424,10,0,-10">
-            <Button x:Name="btnNuevoCopia" ToolTip="nuevo" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=Add}" Margin="10" FontSize="16"   />
-            <Button x:Name="btnGuardar1" ToolTip="guardar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=ContentSave}" Margin="5" FontSize="16" Click="btnGuardar_Click" Cursor="Hand"  />
-            <Button x:Name="btnBorrar1" ToolTip="eliminar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=TrashCan}" Margin="5" FontSize="16" Click="btnBorrar_Click"  />
+            <Button x:Name="btnNuevoCopia" ToolTip="nueva copia" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=Add}" Margin="10" FontSize="16"   />
+            <Button x:Name="btnGuardar1" ToolTip="guardar copia" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=ContentSave}" Margin="5" FontSize="16" Click="btnGuardar_Click" Cursor="Hand"  />
+            <Button x:Name="btnBorrar1" ToolTip="eliminar copia" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=TrashCan}" Margin="5" FontSize="16" Click="btnBorrar_Click"  />
 
         </WrapPanel>
     </Grid>

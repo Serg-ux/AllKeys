@@ -55,7 +55,7 @@
             </Grid>
         </GroupBox>
         <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="205" Grid.Row="2" Margin="1028,10,0,10">
-            <Button x:Name="btnNuevo" ToolTip="nuevo" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=Add}" Margin="10" FontSize="16"   />
+            <Button x:Name="btnNuevo" ToolTip="nuevo" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=Add}" Margin="10" FontSize="16" Cursor="Hand"   />
             <Button x:Name="btnGuardar" ToolTip="guardar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=ContentSave}" Margin="10" FontSize="16"   />
             <Button x:Name="btnBorrar" ToolTip="eliminar" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=TrashCan}" Margin="10" FontSize="16"  />
 
