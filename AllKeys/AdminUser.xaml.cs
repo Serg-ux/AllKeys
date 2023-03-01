@@ -54,7 +54,7 @@ namespace AllKeys
             nuevo=true;
         }
 
-        private void btnGuardar_Click(object sender, RoutedEventArgs e)
+        private void btnGuardar_Click_1(object sender, RoutedEventArgs e)
         {
             String errores = Validacion.errores(usuario);
             if (errores.Equals(""))
@@ -63,17 +63,18 @@ namespace AllKeys
                 {
                     bd.UsuariosRepository.Añadir(usuario);
                     bd.Save();
-                    dgUsuarios.ItemsSource = bd.UsuariosRepository.UsuariosCompletos();
                 }
                 else
                 {
                     bd.UsuariosRepository.Update(usuario);
                     bd.Save();
                 }
+                Limpiar();
+                dgUsuarios.ItemsSource = bd.UsuariosRepository.UsuariosCompletos();
             }
         }
 
-        private void btnBorrar_Click(object sender, RoutedEventArgs e)
+        private void btnBorrar_Click_1(object sender, RoutedEventArgs e)
         {
             if (dgUsuarios.SelectedIndex != -1)
             {
