@@ -33,7 +33,7 @@ namespace AllKeys
             dgUsuarios.SelectedIndex = -1;
 
             //problemas combobox
-            cbRol.ItemsSource=bd.RolesRepository.RolCompleto();
+            cbRol.ItemsSource=bd.RolesRepository.GetAll();
             cbRol.DisplayMemberPath = "RolNombre";
             cbRol.SelectedValue = "RolId";
         }
