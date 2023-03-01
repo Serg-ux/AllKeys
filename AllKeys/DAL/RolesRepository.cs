@@ -13,5 +13,9 @@ namespace AllKeys.DAL
         public RolesRepository(VentasContext context) : base(context)
         {
         }
+        public List<Rol> RolCompleto()
+        {
+            return Get(includeProperties: "Usuario");
+        }
     }
 }
