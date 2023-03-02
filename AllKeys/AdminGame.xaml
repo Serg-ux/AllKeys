@@ -9,7 +9,7 @@
          WindowStartupLocation="CenterScreen"
         d:DesignHeight="720" d:DesignWidth="1280"
         Title="AdminGame" Height="720" Width="1280">
-    <Grid Background="darkcyan">
+    <Grid Background="#e5acff">
         <Grid.RowDefinitions>
 
             <RowDefinition Height="31*"/>
@@ -27,7 +27,7 @@
                 <DataGridTextColumn Header="Disponible" Binding="{Binding Path= Disponible}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <GroupBox x:Name="gbFormularioV" Header="Datos de Videojuegos" Margin="36,0,30,41" Grid.Row="1" >
+        <GroupBox x:Name="gbFormularioV" Background="White" Header="Datos de Videojuegos" Margin="36,0,30,41" Grid.Row="1" >
             <Grid x:Name="gContenedor5a">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -68,7 +68,7 @@
         </DataGrid>
         <Label Content="VIDEOJUEGOS" HorizontalAlignment="Left" Height="31" Margin="34,0,0,0" VerticalAlignment="Top" Width="244" />
         <Label Content="COPIAS" HorizontalAlignment="Left" Height="31" Margin="791,5,0,0" VerticalAlignment="Top" Width="244"/>
-        <TextBox x:Name="tbCodCopia" x:Uid="Codigo Copia" materialDesign:HintAssist.Hint="Codigo Copia" 
+        <TextBox Background="White" x:Name="tbCodCopia" x:Uid="Codigo Copia" materialDesign:HintAssist.Hint="Codigo Copia" 
                             Grid.Column="0"
                             Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="34,0,861,32" Cursor="IBeam" Grid.Row="2" >
             <TextBox.Text>
