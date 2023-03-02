@@ -8,15 +8,17 @@
         mc:Ignorable="d" 
          WindowStartupLocation="CenterScreen"
         d:DesignHeight="720" d:DesignWidth="1280"
-        Title="AdminGame" Height="720" Width="1280">
-    <Grid Background="#e5acff">
+        Title="AdminGame" >
+    <Grid Background="#6bc285">
         <Grid.RowDefinitions>
 
             <RowDefinition Height="31*"/>
             <RowDefinition Height="320"/>
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="dgVideojuegos" IsReadOnly="False" HorizontalAlignment="Left" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="36,36,0,10"  Width="727" SelectionChanged="dgVideojuegos_SelectionChanged">
+        <Label Content="VIDEOJUEGOS" HorizontalAlignment="Left" Height="31" Margin="34,0,0,0" VerticalAlignment="Top" Width="244" />
+        <Label Content="COPIAS" HorizontalAlignment="Left" Height="31" Margin="913,0,0,0" VerticalAlignment="Top" Width="244"/>
+        <DataGrid x:Name="dgVideojuegos" IsReadOnly="False" HorizontalAlignment="Left" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="36,36,0,10" SelectionChanged="dgVideojuegos_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="50" Binding="{Binding Path=VideojuegoId}"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Path=VideojuegoName}"/>
@@ -27,12 +29,18 @@
                 <DataGridTextColumn Header="Disponible" Binding="{Binding Path= Disponible}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <DataGrid x:Name="dgCopias" IsReadOnly="False" HorizontalAlignment="Left" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="913,36,0,10"  SelectionChanged="dgCopias_SelectionChanged" Width="337">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Width="50" Binding="{Binding CopiaId}"/>
+                <DataGridTextColumn Header="Codigo" Binding="{Binding CopiaCod}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
         <GroupBox x:Name="gbFormularioV" Background="White" Header="Datos de Videojuegos" Margin="36,0,30,41" Grid.Row="1" >
             <Grid x:Name="gContenedor5a">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
-
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -54,30 +62,21 @@
                 <Label Content="Disponible" HorizontalAlignment="Left" Height="31" Margin="10,31,0,0" VerticalAlignment="Top" Width="244" Grid.Row="1" Grid.Column="2"/>
             </Grid>
         </GroupBox>
-        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="137" Grid.Row="2" Margin="1113,10,0,10">
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left"  Grid.Row="2" Margin="1114,0,0,-32">
             <Button x:Name="btnGuardar" ToolTip="guardar juego" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=ContentSave}" Margin="10" FontSize="16" Click="btnGuardar_Click"  />
             <Button x:Name="btnBorrar" ToolTip="eliminar juego" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=TrashCan}" Margin="10" FontSize="16" Click="btnBorrar_Click"  />
 
         </WrapPanel>
-        <DataGrid x:Name="dgCopias" IsReadOnly="False" HorizontalAlignment="Left" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="791,36,0,10"  Width="459" SelectionChanged="dgCopias_SelectionChanged">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Width="50" Binding="{Binding CopiaId}"/>
-                <DataGridTextColumn Header="Codigo" Binding="{Binding CopiaCod}"/>
 
-            </DataGrid.Columns>
-        </DataGrid>
-        <Label Content="VIDEOJUEGOS" HorizontalAlignment="Left" Height="31" Margin="34,0,0,0" VerticalAlignment="Top" Width="244" />
-        <Label Content="COPIAS" HorizontalAlignment="Left" Height="31" Margin="791,5,0,0" VerticalAlignment="Top" Width="244"/>
-        <TextBox Background="White" x:Name="tbCodCopia" x:Uid="Codigo Copia" materialDesign:HintAssist.Hint="Codigo Copia" 
-                            Grid.Column="0"
-                            Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="34,0,861,32" Cursor="IBeam" Grid.Row="2" >
+
+        <TextBox Background="White" x:Name="tbCodCopia" x:Uid="Codigo Copia" materialDesign:HintAssist.Hint="Codigo Copia"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="34,0,861,32" Cursor="IBeam" Grid.Row="2" >
             <TextBox.Text>
                 <Binding Path="CopiaCod">
 
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="122" Grid.Row="2" Margin="424,10,0,-10">
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="2" Margin="447,10,0,-10">
             <Button x:Name="btnGuardar1" ToolTip="guardar copia" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=ContentSave}" Margin="5" FontSize="16" Click="btnGuardar_Click" Cursor="Hand"  />
             <Button x:Name="btnBorrar1" ToolTip="eliminar copia" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=TrashCan}" Margin="5" FontSize="16" Click="btnBorrar_Click"  />
 

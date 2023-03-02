@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AllKeys.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,7 @@ namespace AllKeys
     /// </summary>
     public partial class MainWindow : Window
     {
+        Usuario usuario = new Usuario();
         public MainWindow()
         {
             InitializeComponent();

@@ -14,7 +14,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="Usuarios" Height="650" MinHeight="650" MaxHeight="650" Width="550" MinWidth="550" MaxWidth="550" WindowStartupLocation="CenterScreen">
-    <Grid Name="gContenedor"  Background="#cfcfcf"  IsEnabled="True" Visibility="Visible">
+    <Grid Name="gContenedor"  Background="#02735E"  IsEnabled="True" Visibility="Visible">
         <Grid.RowDefinitions>
             <RowDefinition Height="296*" />
             <RowDefinition Height="225*"/>
