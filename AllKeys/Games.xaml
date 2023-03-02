@@ -8,9 +8,11 @@
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="Games">
-
     <Grid>
-
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,122,0,0" Height="97" Width="388">
+            <Button x:Name="btnBuscar" Margin="10,10,10,10" Width="62" Height="48" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesignMahApps:PackIcon Kind=Search}" FontSize="16" Padding="0"/>
+            <TextBox TabIndex="-1"  Margin="10,10,10,10" HorizontalAlignment="Left" Width="239" materialDesignMahApps:HintAssist.Hint="Búsqueda" Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="txtBusqueda" FontSize="16" VerticalAlignment="Top" Height="53"  />
+        </WrapPanel>
         <DataGrid x:Name="dgVideojuegos" IsReadOnly="true" CanUserResizeColumns="False" CanUserResizeRows="False"  CanUserAddRows="False" HorizontalAlignment="Center" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="0,224,0,52"  Width="804">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding VideojuegoName}"/>
@@ -20,10 +22,6 @@
                 <DataGridTextColumn Header="Precio" Binding="{Binding Precio }"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnBuscar" Width="62" Height="48" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesignMahApps:PackIcon Kind=Search}" FontSize="16" Padding="0" Margin="977,133,0,0"/>
-        <TextBox TabIndex="-1" HorizontalAlignment="Left" Width="239" materialDesignMahApps:HintAssist.Hint="Búsqueda" Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="txtBusqueda" FontSize="16" VerticalAlignment="Top" Height="53" Margin="733,130,0,0" />
-        <ComboBox x:Name="cbFiltro" HorizontalAlignment="Left" Height="31" Margin="238,152,0,0" VerticalAlignment="Top" Width="248"/>
-        <Label Content="Filtro" FontSize="16" HorizontalAlignment="Left" Height="34" Margin="238,113,0,0" VerticalAlignment="Top" Width="106"/>
 
     </Grid>
 </Page>

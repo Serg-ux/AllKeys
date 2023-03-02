@@ -1,4 +1,5 @@
 ﻿using AllKeys.Modelo;
+using ExamenVentas.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,17 +23,13 @@ namespace AllKeys
     public partial class MainWindow : Window
     {
         Usuario usuario = new Usuario();
+        UnitOfWork bd = new UnitOfWork();
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void bt_forgot_Pswd_Click(object sender, RoutedEventArgs e)
-        {
-            ForgetPassword forgetPassword = new ForgetPassword();
-            forgetPassword.Show();
-            this.Close();
-        }
+        
 
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
@@ -43,9 +40,18 @@ namespace AllKeys
 
         private void btnEntrar_Click(object sender, RoutedEventArgs e)
         {
-            Principal principal = new Principal();
-            principal.Show();
-            this.Close();
+            //comprueba si en la bd existe o no el usuario, si existe lo devolverá
+            usuario = bd.UsuariosRepository.ValidarUsuario(txtNombre.Text, pb_contra.Password.ToString());
+            if (usuario != null)
+            {
+                Principal principal = new Principal();
+                principal.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Usuario no encontrado", "Error Login", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

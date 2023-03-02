@@ -32,6 +32,7 @@ namespace AllKeys
         private void Juegosbt_Click(object sender, RoutedEventArgs e)
         {
               frame.Content = game;
+
         }
 
         private void perfil_Click(object sender, RoutedEventArgs e)

@@ -20,7 +20,7 @@ namespace AllKeys.DAL
         }
         public  Usuario ValidarUsuario(string nombre, string contraseña)
         {
-            return Get(u => u.UsuarioNombre == nombre && u.UsuarioContra == contraseña, includeProperties: "Ventas").FirstOrDefault();
+            return Get(u => u.UsuarioNombre == nombre && u.UsuarioContra == contraseña).FirstOrDefault();
 
         }
 
