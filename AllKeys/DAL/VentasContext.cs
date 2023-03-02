@@ -19,6 +19,7 @@ namespace AllKeys.DAL
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=AllKeys;User Id=sa; password=abc123.");
+            //optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=AllKeys;Integrated Security=True");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {            
