@@ -16,7 +16,7 @@
             <RowDefinition Height="209*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <DataGrid x:Name="dgCarrito" IsReadOnly="true" HorizontalAlignment="Center" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="0,30,0,30"  Width="804">
+        <DataGrid x:Name="dgCarrito" IsReadOnly="true" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserAddRows="False" HorizontalAlignment="Center" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="0,30,0,30"  Width="804">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="50" Binding="{Binding }"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding }"/>

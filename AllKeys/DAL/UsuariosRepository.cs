@@ -18,11 +18,11 @@ namespace AllKeys.DAL
         {
             return Get(includeProperties: "Rol");
         }
-        //public static Usuario ValidarUsuario(string nombre, string contraseña)
-        //{
-        //    //return Get(u => u.UsuarioNombre == nombre && u.UsuarioContra==contraseña,includeProperties: "Ventas").FirstOrDefault();
+        public  Usuario ValidarUsuario(string nombre, string contraseña)
+        {
+            return Get(u => u.UsuarioNombre == nombre && u.UsuarioContra == contraseña, includeProperties: "Ventas").FirstOrDefault();
 
-        //}
-        
+        }
+
     }
 }

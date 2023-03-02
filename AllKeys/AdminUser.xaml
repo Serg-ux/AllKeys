@@ -15,7 +15,7 @@
             <RowDefinition Height="320"/>
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="dgUsuarios" IsReadOnly="False" HorizontalAlignment="Center" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="0,23,0,23"  Width="1186" SelectionChanged="dgUsuarios_SelectionChanged">
+        <DataGrid x:Name="dgUsuarios" IsReadOnly="False" HorizontalAlignment="Center" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserAddRows="False" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="0,23,0,23"  Width="1186" SelectionChanged="dgUsuarios_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="50"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding UsuarioNombre}"/>
@@ -26,7 +26,7 @@
                 <DataGridTextColumn Header="Rol" Binding="{Binding Path=Rol.RolNombre}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <GroupBox Background="White" x:Name="gbFormularioC" Header="Datos de usuario" Margin="47,0,47,86" Grid.RowSpan="2" Grid.Row="1" >
+        <GroupBox Background="White"  x:Name="gbFormularioC" Header="Datos de usuario" Margin="47,0,47,86" Grid.RowSpan="2" Grid.Row="1" >
             <Grid x:Name="gContenedor5a" Margin="0,0,0,36">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
