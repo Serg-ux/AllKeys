@@ -10,26 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace AllKeys
 {
     /// <summary>
-    /// Lógica de interacción para Carrito.xaml
+    /// Lógica de interacción para ValidarTarjeta.xaml
     /// </summary>
-    public partial class Carrito : Page
+    public partial class ValidarTarjeta : Window
     {
-        public Carrito()
+        public ValidarTarjeta()
         {
             InitializeComponent();
-        }
-
-        private void btnComprar_Click(object sender, RoutedEventArgs e)
-        {
-            ValidarTarjeta validarTarjeta = new ValidarTarjeta();
-            validarTarjeta.Show();
-            
         }
     }
 }
