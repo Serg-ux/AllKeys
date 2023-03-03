@@ -19,9 +19,9 @@ namespace AllKeys.DAL
             // includeProperties  se está solicitando que las ventas asociadas a ese cliente también se carguen en la memoria.
             return Get(includeProperties: "Copias");
         }
-        public List<Videojuego> FiltroVideojuegos(string nombre, string compañia )
-        {
+        //public List<Videojuego> FiltroVideojuegos(string nombre, string compañia)
+        //{
 
-        }
+        //}
     }
 }

@@ -18,8 +18,8 @@ namespace AllKeys.DAL
         public DbSet<Videojuego> Videojuegos { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=AllKeys;User Id=sa; password=abc123.");
-            //optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=AllKeys;Integrated Security=True");
+            //optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=AllKeys;User Id=sa; password=abc123.");
+            optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=AllKeys;Integrated Security=True");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {            
@@ -89,28 +89,28 @@ namespace AllKeys.DAL
             modelBuilder.Entity<Rol>().HasData(
                new Rol
                {
-                   RolId = 1,
+                   RolId= 1,
                    RolNombre = "Admin"
                }
            );
             modelBuilder.Entity<Rol>().HasData(
               new Rol
               {
-                  RolId = 2,
+                  RolId= 2,
                   RolNombre = "Usuario"
               }
           );
             modelBuilder.Entity<Rol>().HasData(
               new Rol
               {
-                  RolId = 3,
+                  RolId= 3,
                   RolNombre = "Premium"
               }
           );
             modelBuilder.Entity<Usuario>().HasData(
                 new Usuario
                 {
-                    UsuarioId = 1,
+                    UsuarioId= 1,
                     UsuarioNombre="Admin",
                     UsuarioTlf="616756340",
                     UsuarioColor_Fav="amarillo",
@@ -123,7 +123,7 @@ namespace AllKeys.DAL
             modelBuilder.Entity<Usuario>().HasData(
                 new Usuario
                 {
-                    UsuarioId = 2,
+                    UsuarioId= 2,
                     UsuarioNombre = "User1",
                     UsuarioTlf = "694234651",
                     UsuarioColor_Fav = "amarillo",
@@ -135,7 +135,7 @@ namespace AllKeys.DAL
             modelBuilder.Entity<Usuario>().HasData(
                 new Usuario
                 {
-                    UsuarioId = 3,
+                    UsuarioId= 3,
                     UsuarioNombre = "User2",
                     UsuarioTlf = "194244554",
                     UsuarioColor_Fav = "azul",
@@ -144,6 +144,34 @@ namespace AllKeys.DAL
                     RolId = 3
                 }
             );
+            modelBuilder.Entity<Usuario>().HasData(
+               new Usuario
+               {
+
+                   UsuarioId = 4,
+                   UsuarioNombre = "Carlos",
+                   UsuarioTlf = "616736340",
+                   UsuarioColor_Fav = "azul",
+                   UsuarioContra = "abc123.",
+                   UsuarioCorreo = "carlos@gmail.com",
+                   RolId = 2
+
+               }
+           );
+            modelBuilder.Entity<Usuario>().HasData(
+               new Usuario
+               {
+
+                   UsuarioId= 5,
+                   UsuarioNombre = "Martin",
+                   UsuarioTlf = "611236340",
+                   UsuarioColor_Fav = "verde",
+                   UsuarioContra = "abc123.",
+                   UsuarioCorreo = "martin@gmail.com",
+                   RolId = 2
+
+               }
+           );
             modelBuilder.Entity<Videojuego>().HasData(
                 new Videojuego
                 {
@@ -156,8 +184,54 @@ namespace AllKeys.DAL
                     VideojuegoName="Csgo"
                 }
             );
-            
-            
+            modelBuilder.Entity<Videojuego>().HasData(
+               new Videojuego
+               {
+                   VideojuegoId = 2,
+                   Descripccion = "Juego competitivo basado en plantar bombas y cubrir",
+                   Disponible = 1,
+                   Precio = 12.5,
+                   Tipo = "Shooter",
+                   VideojuegoCompania = "Valve,",
+                   VideojuegoName = "Csgo"
+               }
+           );
+            modelBuilder.Entity<Videojuego>().HasData(
+               new Videojuego
+               {
+                   VideojuegoId = 3,
+                   Descripccion = "Shooter",
+                   Disponible = 1,
+                   Precio = 30,
+                   Tipo = "Shooter",
+                   VideojuegoCompania = "Activision,",
+                   VideojuegoName = "Call of Duty"
+               }
+           );
+            modelBuilder.Entity<Videojuego>().HasData(
+               new Videojuego
+               {
+                   VideojuegoId = 4,
+                   Descripccion = "Juego creativo",
+                   Disponible = 1,
+                   Precio = 16,
+                   Tipo = "Survival",
+                   VideojuegoCompania = "Mojang,",
+                   VideojuegoName = "Minecraft"
+               }
+           );
+            modelBuilder.Entity<Videojuego>().HasData(
+               new Videojuego
+               {
+                   VideojuegoId = 5,
+                   Descripccion = "Perdida de tiempo",
+                   Disponible = 1,
+                   Precio = 0,
+                   Tipo = "MMO",
+                   VideojuegoCompania = "Riot Games",
+                   VideojuegoName = "League of Legends"
+               }
+           );
         }
     }
 }

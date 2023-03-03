@@ -191,6 +191,26 @@ namespace AllKeys.Migrations
                             UsuarioCorreo = "user2@gmail.com",
                             UsuarioNombre = "User2",
                             UsuarioTlf = "194244554"
+                        },
+                        new
+                        {
+                            UsuarioId = 4,
+                            RolId = 2,
+                            UsuarioColor_Fav = "azul",
+                            UsuarioContra = "abc123.",
+                            UsuarioCorreo = "carlos@gmail.com",
+                            UsuarioNombre = "Carlos",
+                            UsuarioTlf = "616736340"
+                        },
+                        new
+                        {
+                            UsuarioId = 5,
+                            RolId = 2,
+                            UsuarioColor_Fav = "verde",
+                            UsuarioContra = "abc123.",
+                            UsuarioCorreo = "martin@gmail.com",
+                            UsuarioNombre = "Martin",
+                            UsuarioTlf = "611236340"
                         });
                 });
 
@@ -240,6 +260,46 @@ namespace AllKeys.Migrations
                             Tipo = "Shooter",
                             VideojuegoCompania = "Valve,",
                             VideojuegoName = "Csgo"
+                        },
+                        new
+                        {
+                            VideojuegoId = 2,
+                            Descripccion = "Juego competitivo basado en plantar bombas y cubrir",
+                            Disponible = 1,
+                            Precio = 12.5,
+                            Tipo = "Shooter",
+                            VideojuegoCompania = "Valve,",
+                            VideojuegoName = "Csgo"
+                        },
+                        new
+                        {
+                            VideojuegoId = 3,
+                            Descripccion = "Shooter",
+                            Disponible = 1,
+                            Precio = 30.0,
+                            Tipo = "Shooter",
+                            VideojuegoCompania = "Activision,",
+                            VideojuegoName = "Call of Duty"
+                        },
+                        new
+                        {
+                            VideojuegoId = 4,
+                            Descripccion = "Juego creativo",
+                            Disponible = 1,
+                            Precio = 16.0,
+                            Tipo = "Survival",
+                            VideojuegoCompania = "Mojang,",
+                            VideojuegoName = "Minecraft"
+                        },
+                        new
+                        {
+                            VideojuegoId = 5,
+                            Descripccion = "Perdida de tiempo",
+                            Disponible = 1,
+                            Precio = 0.0,
+                            Tipo = "MMO",
+                            VideojuegoCompania = "Riot Games",
+                            VideojuegoName = "League of Legends"
                         });
                 });
 

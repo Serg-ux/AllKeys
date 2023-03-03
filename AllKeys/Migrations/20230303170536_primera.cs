@@ -142,22 +142,26 @@ namespace AllKeys.Migrations
             migrationBuilder.InsertData(
                 table: "Videojuegos",
                 columns: new[] { "VideojuegoId", "Descripccion", "Disponible", "Precio", "Tipo", "VideojuegoCompania", "VideojuegoName" },
-                values: new object[] { 1, "Juego competitivo basado en plantar bombas y cubrir", 1, 12.5, "Shooter", "Valve,", "Csgo" });
+                values: new object[,]
+                {
+                    { 1, "Juego competitivo basado en plantar bombas y cubrir", 1, 12.5, "Shooter", "Valve,", "Csgo" },
+                    { 2, "Juego competitivo basado en plantar bombas y cubrir", 1, 12.5, "Shooter", "Valve,", "Csgo" },
+                    { 3, "Shooter", 1, 30.0, "Shooter", "Activision,", "Call of Duty" },
+                    { 4, "Juego creativo", 1, 16.0, "Survival", "Mojang,", "Minecraft" },
+                    { 5, "Perdida de tiempo", 1, 0.0, "MMO", "Riot Games", "League of Legends" }
+                });
 
             migrationBuilder.InsertData(
                 table: "Usuarios",
                 columns: new[] { "UsuarioId", "Discriminator", "RolId", "UsuarioColor_Fav", "UsuarioContra", "UsuarioCorreo", "UsuarioNombre", "UsuarioTlf" },
-                values: new object[] { 1, "Usuario", 1, "amarillo", "abc123.", "admin@gmail.com", "Admin", "616756340" });
-
-            migrationBuilder.InsertData(
-                table: "Usuarios",
-                columns: new[] { "UsuarioId", "Discriminator", "RolId", "UsuarioColor_Fav", "UsuarioContra", "UsuarioCorreo", "UsuarioNombre", "UsuarioTlf" },
-                values: new object[] { 2, "Usuario", 2, "amarillo", "abc123.", "user1@gmail.com", "User1", "694234651" });
-
-            migrationBuilder.InsertData(
-                table: "Usuarios",
-                columns: new[] { "UsuarioId", "Discriminator", "RolId", "UsuarioColor_Fav", "UsuarioContra", "UsuarioCorreo", "UsuarioNombre", "UsuarioTlf" },
-                values: new object[] { 3, "Usuario", 3, "azul", "abc123.", "user2@gmail.com", "User2", "194244554" });
+                values: new object[,]
+                {
+                    { 1, "Usuario", 1, "amarillo", "abc123.", "admin@gmail.com", "Admin", "616756340" },
+                    { 2, "Usuario", 2, "amarillo", "abc123.", "user1@gmail.com", "User1", "694234651" },
+                    { 4, "Usuario", 2, "azul", "abc123.", "carlos@gmail.com", "Carlos", "616736340" },
+                    { 5, "Usuario", 2, "verde", "abc123.", "martin@gmail.com", "Martin", "611236340" },
+                    { 3, "Usuario", 3, "azul", "abc123.", "user2@gmail.com", "User2", "194244554" }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Copias_UsuarioRegistradoId",
