@@ -23,11 +23,11 @@ namespace AllKeys
     public partial class Games : Page
     {
         Videojuego videojuego = new Videojuego();
-        UnitOfWork bd = new UnitOfWork();
+        
         public Games()
         {
             InitializeComponent();
-            dgVideojuegos.ItemsSource = bd.VideojuegosRepository.GetAll();
+            dgVideojuegos.ItemsSource = Principal.bd.VideojuegosRepository.GetAll();
             dgVideojuegos.SelectedIndex = -1;
         }
     }

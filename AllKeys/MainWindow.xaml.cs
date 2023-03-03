@@ -40,18 +40,26 @@ namespace AllKeys
 
         private void btnEntrar_Click(object sender, RoutedEventArgs e)
         {
-            //comprueba si en la bd existe o no el usuario, si existe lo devolverá
-            usuario = bd.UsuariosRepository.ValidarUsuario(txtNombre.Text, pb_contra.Password.ToString());
-            if (usuario != null)
+            if(txtNombre.Text!=""||pb_contra.Password.ToString()!= "")
             {
-                Principal principal = new Principal();
-                principal.Show();
-                this.Close();
+                //comprueba si en la bd existe o no el usuario, si existe lo devolverá
+                usuario = bd.UsuariosRepository.ValidarUsuario(txtNombre.Text, pb_contra.Password.ToString());
+                if (usuario != null)
+                {
+                    Principal principal = new Principal();
+                    principal.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario no encontrado", "Error Login", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Usuario no encontrado", "Error Login", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Faltan Datos", "Error Login", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+           
         }
     }
 }

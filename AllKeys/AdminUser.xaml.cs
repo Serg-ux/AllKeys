@@ -35,7 +35,7 @@ namespace AllKeys
             //problemas combobox
             cbRol.ItemsSource=bd.RolesRepository.GetAll();
             cbRol.DisplayMemberPath = "RolNombre";
-            cbRol.SelectedValue = "RolId";
+            cbRol.SelectedValuePath = "RolId";
         }
 
         private void dgUsuarios_SelectionChanged(object sender, SelectionChangedEventArgs e)

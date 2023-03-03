@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExamenVentas.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,8 @@ namespace AllKeys
         private Games game = new Games();
         private Perfil perfill = new Perfil();
         private Carrito caritoo = new Carrito();
-       
+        public static UnitOfWork bd = new UnitOfWork();
+
         public Principal()
         {
             InitializeComponent();
@@ -31,7 +33,8 @@ namespace AllKeys
         
         private void Juegosbt_Click(object sender, RoutedEventArgs e)
         {
-              frame.Content = game;
+            Games game = new Games(dg);
+            frame.Content = game;
 
         }
 

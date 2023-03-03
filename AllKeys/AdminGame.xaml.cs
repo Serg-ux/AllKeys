@@ -25,12 +25,14 @@ namespace AllKeys
         Videojuego videojuego = new Videojuego();
         UnitOfWork bd = new UnitOfWork();
         Boolean nuevo = true;
+         
         public AdminGame()
         {
             InitializeComponent();
             gbFormularioV.DataContext = videojuego;
             dgVideojuegos.ItemsSource = bd.VideojuegosRepository.GetAll();
             dgVideojuegos.SelectedIndex = -1;
+
         }
         private void dgVideojuegos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -66,6 +68,7 @@ namespace AllKeys
                         bd.VideojuegosRepository.Añadir(videojuego);
                         bd.Save();
                         dgVideojuegos.ItemsSource = bd.VideojuegosRepository.GetAll();
+                       
                     }
                     else
                     {
