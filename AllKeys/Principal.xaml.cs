@@ -33,7 +33,7 @@ namespace AllKeys
         
         private void Juegosbt_Click(object sender, RoutedEventArgs e)
         {
-            Games game = new Games(dg);
+            Games game = new Games();
             frame.Content = game;
 
         }
@@ -65,6 +65,7 @@ namespace AllKeys
         {
             AdminGame adminGame =new AdminGame();
             adminGame.Show();
+            this.Close();
             
         }
 
@@ -72,7 +73,7 @@ namespace AllKeys
         {
             AdminUser adminUser =new AdminUser();
             adminUser.Show();
-           
+            this.Close();
         }
     }
 }

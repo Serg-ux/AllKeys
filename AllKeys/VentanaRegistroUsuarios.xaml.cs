@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AllKeys.Modelo;
+using ExamenVentas.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Usuarios.Modelo;
 
 namespace AllKeys
 {
@@ -19,9 +22,16 @@ namespace AllKeys
     /// </summary>
     public partial class VentanaRegistroUsuarios : Window
     {
+        Usuario usuario = new Usuario();
+        UnitOfWork bd = new UnitOfWork();
         public VentanaRegistroUsuarios()
         {
             InitializeComponent();
+            gbFormulario.DataContext=usuario;
+
+            cbRol.ItemsSource = bd.RolesRepository.GetAll();
+            cbRol.DisplayMemberPath = "RolNombre";
+            cbRol.SelectedValuePath = "RolId";
         }
 
         private void btnVolver_Click(object sender, RoutedEventArgs e)
@@ -29,6 +39,31 @@ namespace AllKeys
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
+        }
+        private void Limpiar()
+        {
+            usuario = new Usuario();
+            gbFormulario.DataContext = usuario;
+        }
+        private void btnGuardar_Click(object sender, RoutedEventArgs e)
+        {
+            String errores = Validacion.errores(usuario);
+            if (errores.Equals(""))
+            {
+                bd.UsuariosRepository.Añadir(usuario);
+                bd.Save();
+                Limpiar();
+                MessageBox.Show("Usuario Registrado?",
+                   "Validar",
+                   MessageBoxButton.OK,
+                   MessageBoxImage.Information);
+            }
+        }
+
+        private void btnBorrar_Click(object sender, RoutedEventArgs e)
+        {
+            usuario = new Usuario();
+            gbFormulario.DataContext = usuario;
         }
     }
 }

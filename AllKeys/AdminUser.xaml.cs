@@ -84,5 +84,11 @@ namespace AllKeys
                 dgUsuarios.ItemsSource = bd.UsuariosRepository.UsuariosCompletos();
             }
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Principal principal = new Principal();
+            principal.Show();
+        }
     }
 }

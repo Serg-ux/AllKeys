@@ -7,7 +7,9 @@
         mc:Ignorable="d"
          WindowStartupLocation="CenterScreen"
         Title="AdminUser" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        d:DesignHeight="720" d:DesignWidth="1280">
+        d:DesignHeight="720" d:DesignWidth="1280"
+        Closing="Window_Closing"
+        >
     <Grid Background="#6bc285">
         <Grid.RowDefinitions>
 

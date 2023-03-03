@@ -8,7 +8,9 @@
         mc:Ignorable="d" 
          WindowStartupLocation="CenterScreen"
         d:DesignHeight="720" d:DesignWidth="1280"
-        Title="AdminGame" >
+        Title="AdminGame"
+        Closing="Window_Closing"
+        >
     <Grid Background="#6bc285">
         <Grid.RowDefinitions>
 

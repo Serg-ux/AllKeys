@@ -105,5 +105,12 @@ namespace AllKeys
         {
 
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Principal principal = new Principal();
+            principal.Show();
+            
+        }
     }
 }

@@ -17,5 +17,9 @@ namespace AllKeys.DAL
         {
             return Get(includeProperties: "Usuario");
         }
+        public List<Rol> RolesUsuarios()
+        {
+            return Get(r => r.RolId != 1);
+        }
     }
 }
