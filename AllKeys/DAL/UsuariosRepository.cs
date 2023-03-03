@@ -23,6 +23,5 @@ namespace AllKeys.DAL
             return Get(u => u.UsuarioNombre == nombre && u.UsuarioContra == contraseña).FirstOrDefault();
 
         }
-
     }
 }

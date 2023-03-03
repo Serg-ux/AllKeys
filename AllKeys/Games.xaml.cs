@@ -30,5 +30,12 @@ namespace AllKeys
             dgVideojuegos.ItemsSource = Principal.bd.VideojuegosRepository.GetAll();
             dgVideojuegos.SelectedIndex = -1;
         }
+
+        private void btnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+            List<Videojuego> videojuegos = Principal.bd.VideojuegosRepository.
+            FiltroLibros(txtBusquedaUs.Text);
+            dgVideojuegos.ItemsSource = videojuegos;
+        }
     }
 }
