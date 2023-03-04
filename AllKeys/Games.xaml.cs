@@ -33,8 +33,8 @@ namespace AllKeys
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
-            //List<Videojuego> videojuegos = Principal.bd.VideojuegosRepository.FiltroLibros(txtBusquedaUs.Text);
-            //dgVideojuegos.ItemsSource = videojuegos;
+            List<Videojuego> videojuegos = Principal.bd.VideojuegosRepository.FiltroVideojuegos(txtBusqueda.Text);
+            dgVideojuegos.ItemsSource = videojuegos;
         }
     }
 }

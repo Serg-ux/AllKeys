@@ -75,5 +75,10 @@ namespace AllKeys
             adminUser.Show();
             this.Close();
         }
+
+        private void btadmindisc_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

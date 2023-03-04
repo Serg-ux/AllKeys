@@ -10,6 +10,7 @@ namespace AllKeys.Modelo
     public class Usuario
     {
         public int UsuarioId { get; set; }
+        
         [Required]
         [StringLength(maximumLength:30 , ErrorMessage = "Longitud maxima admitida 30 car")]
         public string UsuarioNombre { get; set; }
