@@ -33,8 +33,8 @@
         </DataGrid>
         <DataGrid x:Name="dgCopias" IsReadOnly="False" CanUserResizeColumns="False" CanUserResizeRows="False"  CanUserAddRows="False" HorizontalAlignment="Right" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,30,30,10" SelectionChanged="dgCopias_SelectionChanged">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Width="70" Binding="{Binding CopiaId}"/>
-                <DataGridTextColumn Width="200" Header="Codigo" Binding="{Binding CopiaCod}"/>
+                <DataGridTextColumn Header="ID" Width="70" Binding="{Binding  Path=CopiaId}"/>
+                <DataGridTextColumn Width="200" Header="Codigo" Binding="{Binding Path=CopiaCod}"/>
 
             </DataGrid.Columns>
         </DataGrid>
@@ -76,16 +76,11 @@
             </WrapPanel>
 
 
-            <TextBox Background="White" x:Name="tbCodCopia" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Uid="Codigo Copia" materialDesign:HintAssist.Hint="Codigo Copia"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Grid.Column="0" Width="250" Height="50" Margin="10,10,10,10" Cursor="IBeam"  >
-                <TextBox.Text>
-                    <Binding Path="CopiaCod">
-
-                    </Binding>
-                </TextBox.Text>
+            <TextBox Background="White" x:Name="tbCodCopia" Text="{Binding Path=CopiaCod, Mode=TwoWay, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" HorizontalAlignment="Left" VerticalAlignment="Bottom" x:Uid="Codigo Copia" materialDesign:HintAssist.Hint="Codigo Copia"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Grid.Column="0" Width="250" Height="50" Margin="10,10,10,10" Cursor="IBeam"  >
             </TextBox>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,242,14">
-                <Button x:Name="btnGuardar1" ToolTip="guardar copia" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=ContentSave}" Margin="5" FontSize="16" Click="btnGuardar_Click" Cursor="Hand"  />
-                <Button x:Name="btnBorrar1" ToolTip="eliminar copia" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=TrashCan}" Margin="5" FontSize="16" Click="btnBorrar_Click"  />
+                <Button x:Name="btnGuardarCopia" ToolTip="guardar copia" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=ContentSave}" Margin="5" FontSize="16" Cursor="Hand" Click="btnGuardarCopia_Click"  />
+                <Button x:Name="btnBorrarCopia" ToolTip="eliminar copia" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=TrashCan}" Margin="5" FontSize="16" Click="btnBorrarCopia_Click"  />
 
             </WrapPanel>
         </Grid>

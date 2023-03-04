@@ -1,4 +1,5 @@
-﻿using ExamenVentas.DAL;
+﻿using AllKeys.Modelo;
+using ExamenVentas.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;

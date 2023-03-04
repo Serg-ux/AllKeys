@@ -13,5 +13,9 @@ namespace AllKeys.DAL
         public CopiasRepository(VentasContext context) : base(context)
         {
         }
+        public List<Copia> CopiasFiltro(int idVideojuego)
+        {
+            return Get(c =>c.VideojuegoId==idVideojuego);
+        }
     }
 }

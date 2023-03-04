@@ -49,6 +49,7 @@ namespace AllKeys
                     Principal principal = new Principal();
                     principal.Show();
                     this.Close();
+                    
                 }
                 else
                 {

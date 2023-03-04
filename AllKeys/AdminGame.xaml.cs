@@ -23,8 +23,10 @@ namespace AllKeys
     public partial class AdminGame : Window
     {
         Videojuego videojuego = new Videojuego();
+        Copia copia= new Copia();
         UnitOfWork bd = new UnitOfWork();
         Boolean nuevo = true;
+        Boolean new_copia= true;
          
         public AdminGame()
         {
@@ -32,7 +34,7 @@ namespace AllKeys
             gbFormularioV.DataContext = videojuego;
             dgVideojuegos.ItemsSource = bd.VideojuegosRepository.GetAll();
             dgVideojuegos.SelectedIndex = -1;
-
+            dgCopias.SelectedIndex = -1;
         }
         private void dgVideojuegos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -41,6 +43,8 @@ namespace AllKeys
                 videojuego = (Videojuego)dgVideojuegos.SelectedItem;
                 gbFormularioV.DataContext = videojuego;
                 nuevo = false;
+
+                dgCopias.ItemsSource= bd.CopiasRepository.CopiasFiltro(videojuego.VideojuegoId);
             }
         }
         private void Limpiar()
@@ -103,14 +107,59 @@ namespace AllKeys
 
         private void dgCopias_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (dgCopias.SelectedIndex != -1)
+            {
+                copia = (Copia)dgCopias.SelectedItem;
+                tbCodCopia.Text = copia.CopiaCod;
+                new_copia = false;
+            }
+        }
+        private void btnGuardarCopia_Click(object sender, RoutedEventArgs e)
+        {
+            String errores = Validacion.errores(copia);
+            if (errores.Equals(""))
+            {
+                if (new_copia)
+                {
+                    bd.CopiasRepository.Añadir(copia);
+                    bd.Save();
+                    dgCopias.ItemsSource = bd.CopiasRepository.GetAll();
 
+                }
+                else
+                {
+                    bd.CopiasRepository.Update(copia);
+                    bd.Save();
+                }
+                    Limpiar_Copia();
+            }
+                
+        
+        }
+        private void Limpiar_Copia()
+        {
+            copia = new Copia();
+            tbCodCopia.Text = copia.CopiaCod;
+            new_copia = true;
         }
 
+        private void btnBorrarCopia_Click(object sender, RoutedEventArgs e)
+        {
+            if (dgCopias.SelectedIndex != -1)
+            {
+                bd.CopiasRepository.Delete(copia);
+                bd.Save();
+                Limpiar_Copia();
+                dgCopias.ItemsSource = bd.CopiasRepository.GetAll();
+            }
+        }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Principal principal = new Principal();
             principal.Show();
             
         }
+
+       
     }
 }

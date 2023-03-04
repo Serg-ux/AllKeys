@@ -16,9 +16,10 @@ namespace AllKeys.DAL
         }
         public List<Videojuego> videojuegosCompletos()
         {
-            // includeProperties  se está solicitando que las ventas asociadas a ese cliente también se carguen en la memoria.
+            // includeProperties  se está solicitando que las copias asociadas a ese videojuego también se carguen en la memoria.
             return Get(includeProperties: "Copias");
         }
+        //filtro que devuelve una lista de videojuegos filtrando por que el nombre o la compañía contengan el criterio dado
         public List<Videojuego> FiltroVideojuegos(string criterio)
         {
             return Get(v => v.VideojuegoName.ToLower().Contains(criterio.ToLower()) || v.VideojuegoCompania.ToLower().Contains(criterio.ToLower()));
