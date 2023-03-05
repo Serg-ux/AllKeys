@@ -53,10 +53,17 @@ namespace AllKeys
                 bd.UsuariosRepository.Añadir(usuario);
                 bd.Save();
                 Limpiar();
-                MessageBox.Show("Usuario Registrado?",
+                MessageBox.Show("Usuario Registrado",
                    "Validar",
                    MessageBoxButton.OK,
                    MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("Problema al guardar el usuario",
+                  "Validar",
+                  MessageBoxButton.OK,
+                  MessageBoxImage.Error);
             }
         }
 
