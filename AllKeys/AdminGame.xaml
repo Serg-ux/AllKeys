@@ -80,7 +80,7 @@
             </TextBox>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,242,14">
                 <Button x:Name="btnGuardarCopia" ToolTip="guardar copia" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=ContentSave}" Margin="5" FontSize="16" Cursor="Hand" Click="btnGuardarCopia_Click"  />
-                <Button x:Name="btnBorrarCopia" ToolTip="eliminar copia" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=TrashCan}" Margin="5" FontSize="16" Click="btnBorrarCopia_Click"  />
+                <Button x:Name="btnBorrarCopia" ToolTip="eliminar copia" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=TrashCan}" Margin="5" FontSize="16" Click="btnBorrarCopia_Click" Cursor="Hand"  />
 
             </WrapPanel>
         </Grid>

@@ -15,20 +15,13 @@ using System.Windows.Shapes;
 namespace AllKeys
 {
     /// <summary>
-    /// Lógica de interacción para ValidarTarjeta.xaml
+    /// Lógica de interacción para CompraRealizada.xaml
     /// </summary>
-    public partial class ValidarTarjeta : Window
+    public partial class CompraRealizada : Window
     {
-        public ValidarTarjeta()
+        public CompraRealizada()
         {
             InitializeComponent();
-        }
-
-        private void btnComprar_Click(object sender, RoutedEventArgs e)
-        {
-            CompraRealizada compraRealizada = new CompraRealizada();
-            compraRealizada.Show();
-            this.Close();
         }
     }
 }
