@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AllKeys.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,7 @@ namespace AllKeys
     /// </summary>
     public partial class ValidarTarjeta : Window
     {
+        UsuarioRegistrado usuarioRegistrado= new UsuarioRegistrado();
         public ValidarTarjeta()
         {
             InitializeComponent();
@@ -32,12 +34,12 @@ namespace AllKeys
                 compraRealizada.Show();
                 this.Close();
             }
-            MessageBox.Show("Faltan datos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            else MessageBox.Show("Faltan datos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private void btnLimpiar_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }

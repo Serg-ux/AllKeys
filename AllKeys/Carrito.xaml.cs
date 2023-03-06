@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,7 +39,8 @@ namespace AllKeys
 
         private void btnLimpiar_Click(object sender, RoutedEventArgs e)
         {
-
+            Games.juegos_carrito.Clear();
+            
         }
     }
 }
