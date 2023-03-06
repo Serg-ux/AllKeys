@@ -32,6 +32,7 @@ namespace AllKeys
                 compraRealizada.Show();
                 this.Close();
             }
+            MessageBox.Show("Faltan datos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private void btnLimpiar_Click(object sender, RoutedEventArgs e)

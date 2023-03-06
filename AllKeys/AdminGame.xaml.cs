@@ -60,7 +60,7 @@ namespace AllKeys
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
             String errores = Validacion.errores(videojuego);
-            if(txtCompañia.Text!=""||txtDescripcion.Text!=""||txtDisponible.Text!=""||txtNombre.Text!=""|| txtPrecio.Text != "" || txtTipo.Text != ""){
+            if(txtCompañia.Text != "" && txtDescripcion.Text != "" && txtDisponible.Text != "" && txtNombre.Text != "" && txtPrecio.Text != "" && txtTipo.Text != ""){
                 if (errores.Equals(""))
                 {
                     // Intentamos convertir el valor del TextBox a double y  a int
@@ -83,6 +83,7 @@ namespace AllKeys
                         }
 
                         Limpiar();
+                        MessageBox.Show("Guardado correctamente", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                     else
                     {
@@ -101,10 +102,17 @@ namespace AllKeys
         {
             if (dgVideojuegos.SelectedIndex !=-1)
             {
-                bd.VideojuegosRepository.Delete(videojuego);
-                bd.Save();
-                Limpiar();
-                dgVideojuegos.ItemsSource = bd.VideojuegosRepository.GetAll();
+                if (MessageBox.Show("¿Seguro que desa borrar este videojuego?",
+                 "Borrado",
+                 MessageBoxButton.YesNo,
+                 MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                {
+                    bd.VideojuegosRepository.Delete(videojuego);
+                    bd.Save();
+                    Limpiar();
+                    dgVideojuegos.ItemsSource = bd.VideojuegosRepository.GetAll();
+                }
+                
             }
         }
 

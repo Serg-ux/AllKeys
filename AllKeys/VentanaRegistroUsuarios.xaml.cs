@@ -48,7 +48,7 @@ namespace AllKeys
         }
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            if (txtColorFav.Text != "" || txtContra.Text != "" || txtCorreo.Text != "" || txtNombre.Text != "" || txtTelefono.Text != "" || cbRol.SelectedIndex != -1)
+            if (txtColorFav.Text != "" && txtContra.Text != "" && txtContra.Text != "" && txtNombre.Text != "" && txtTelefono.Text != "" && cbRol.SelectedIndex != -1)
             {
                 String errores = Validacion.errores(usuario);
                 if (errores.Equals(""))
@@ -56,7 +56,7 @@ namespace AllKeys
                     bd.UsuariosRepository.Añadir(usuario);
                     bd.Save();
                     Limpiar();
-                    MessageBox.Show("Se creo el usuario correctamente", "Informcaion", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Se creo el usuario correctamente", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {

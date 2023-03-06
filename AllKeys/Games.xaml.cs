@@ -23,7 +23,7 @@ namespace AllKeys
     public partial class Games : Page
     {
         Videojuego videojuego = new Videojuego();
-        
+        public static List<Videojuego>juegos_carrito= new List<Videojuego>();
         public Games()
         {
             InitializeComponent();
@@ -35,6 +35,14 @@ namespace AllKeys
         {
             List<Videojuego> videojuegos = Principal.bd.VideojuegosRepository.FiltroVideojuegos(txtBusqueda.Text);
             dgVideojuegos.ItemsSource = videojuegos;
+        }
+
+        private void dgVideojuegos_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            // Obtener el elemento seleccionado en la tabla dgVideojuegos
+            Videojuego videojuego = (Videojuego)dgVideojuegos.SelectedItem;
+            // Agregar el elemento seleccionado a la lista juegos_carrito
+            juegos_carrito.Add(videojuego);
         }
     }
 }

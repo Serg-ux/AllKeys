@@ -29,10 +29,10 @@ namespace AllKeys
         {
             InitializeComponent();
             gbFormularioC.DataContext = usuario;
-            dgUsuarios.ItemsSource = bd.UsuariosRepository.UsuariosCompletos();
+            dgUsuarios.ItemsSource = bd.UsuariosRepository.GetAll();
             dgUsuarios.SelectedIndex = -1;
 
-            //problemas combobox
+            
             cbRol.ItemsSource=bd.RolesRepository.GetAll();
             cbRol.DisplayMemberPath = "RolNombre";
             cbRol.SelectedValuePath = "RolId";
@@ -65,6 +65,7 @@ namespace AllKeys
                     {
                         bd.UsuariosRepository.Añadir(usuario);
                         bd.Save();
+                        
                     }
                     else
                     {
@@ -72,9 +73,12 @@ namespace AllKeys
                         bd.Save();
                     }
                     Limpiar();
-                    dgUsuarios.ItemsSource = bd.UsuariosRepository.UsuariosCompletos();
+                    dgUsuarios.ItemsSource = bd.UsuariosRepository.GetAll();
+                    MessageBox.Show("Guardado correctamente", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
-           }else
+                else MessageBox.Show("Error al guardar usuario", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
                 MessageBox.Show("Faltan Datos", "Error Login", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
@@ -82,10 +86,17 @@ namespace AllKeys
         {
             if (dgUsuarios.SelectedIndex != -1)
             {
-                bd.UsuariosRepository.Delete(usuario);
-                bd.Save();
-                Limpiar();
-                dgUsuarios.ItemsSource = bd.UsuariosRepository.UsuariosCompletos();
+                if (MessageBox.Show("¿Seguro que desa borrar este usuario?",
+                  "Borrado",
+                  MessageBoxButton.YesNo,
+                  MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                {
+                    bd.UsuariosRepository.Delete(usuario);
+                    bd.Save();
+                    Limpiar();
+                    dgUsuarios.ItemsSource = bd.UsuariosRepository.UsuariosCompletos();
+                }
+                
             }
         }
 

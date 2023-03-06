@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AllKeys.Migrations
 {
     [DbContext(typeof(VentasContext))]
-    [Migration("20230306134004_primera")]
+    [Migration("20230306181734_primera")]
     partial class primera
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -166,7 +166,7 @@ namespace AllKeys.Migrations
                     b.HasData(
                         new
                         {
-                            UsuarioId = 1,
+                            UsuarioId = 0,
                             RolId = 1,
                             UsuarioColor_Fav = "amarillo",
                             UsuarioContra = "abc123.",
@@ -176,7 +176,7 @@ namespace AllKeys.Migrations
                         },
                         new
                         {
-                            UsuarioId = 2,
+                            UsuarioId = 1,
                             RolId = 2,
                             UsuarioColor_Fav = "amarillo",
                             UsuarioContra = "abc123.",
@@ -186,7 +186,7 @@ namespace AllKeys.Migrations
                         },
                         new
                         {
-                            UsuarioId = 3,
+                            UsuarioId = 2,
                             RolId = 3,
                             UsuarioColor_Fav = "azul",
                             UsuarioContra = "abc123.",
@@ -196,7 +196,7 @@ namespace AllKeys.Migrations
                         },
                         new
                         {
-                            UsuarioId = 4,
+                            UsuarioId = 3,
                             RolId = 2,
                             UsuarioColor_Fav = "azul",
                             UsuarioContra = "abc123.",
@@ -206,7 +206,7 @@ namespace AllKeys.Migrations
                         },
                         new
                         {
-                            UsuarioId = 5,
+                            UsuarioId = 4,
                             RolId = 2,
                             UsuarioColor_Fav = "verde",
                             UsuarioContra = "abc123.",

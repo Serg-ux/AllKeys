@@ -80,5 +80,6 @@ namespace VENTAS_ORM.DAL
             dbSet = context.Set<TEntity>();
             return dbSet.FirstOrDefault(predicate);
         }
+
     }
 }

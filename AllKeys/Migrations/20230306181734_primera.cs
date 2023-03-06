@@ -156,11 +156,11 @@ namespace AllKeys.Migrations
                 columns: new[] { "UsuarioId", "Discriminator", "RolId", "UsuarioColor_Fav", "UsuarioContra", "UsuarioCorreo", "UsuarioNombre", "UsuarioTlf" },
                 values: new object[,]
                 {
-                    { 1, "Usuario", 1, "amarillo", "abc123.", "admin@gmail.com", "Admin", "616756340" },
-                    { 2, "Usuario", 2, "amarillo", "abc123.", "user1@gmail.com", "User1", "694234651" },
-                    { 4, "Usuario", 2, "azul", "abc123.", "carlos@gmail.com", "Carlos", "616736340" },
-                    { 5, "Usuario", 2, "verde", "abc123.", "martin@gmail.com", "Martin", "611236340" },
-                    { 3, "Usuario", 3, "azul", "abc123.", "user2@gmail.com", "User2", "194244554" }
+                    { 0, "Usuario", 1, "amarillo", "abc123.", "admin@gmail.com", "Admin", "616756340" },
+                    { 1, "Usuario", 2, "amarillo", "abc123.", "user1@gmail.com", "User1", "694234651" },
+                    { 3, "Usuario", 2, "azul", "abc123.", "carlos@gmail.com", "Carlos", "616736340" },
+                    { 4, "Usuario", 2, "verde", "abc123.", "martin@gmail.com", "Martin", "611236340" },
+                    { 2, "Usuario", 3, "azul", "abc123.", "user2@gmail.com", "User2", "194244554" }
                 });
 
             migrationBuilder.CreateIndex(

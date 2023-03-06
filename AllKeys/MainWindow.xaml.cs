@@ -38,7 +38,7 @@ namespace AllKeys
 
         private void btnEntrar_Click(object sender, RoutedEventArgs e)
         {
-            if(txtNombre.Text!=""||pb_contra.Password.ToString()!= "")
+            if(txtNombre.Text!="" && pb_contra.Password.ToString()!= "")
             {
                
                 //comprueba si en la bd existe o no el usuario, si existe lo devolverá

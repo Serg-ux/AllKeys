@@ -110,20 +110,20 @@ namespace AllKeys.DAL
             modelBuilder.Entity<Usuario>().HasData(
                 new Usuario
                 {
-                    UsuarioId= 1,
+                    UsuarioId= 0,
                     UsuarioNombre="Admin",
                     UsuarioTlf="616756340",
                     UsuarioColor_Fav="amarillo",
                     UsuarioContra="abc123.",
                     UsuarioCorreo="admin@gmail.com",
-                    RolId=1
+                    RolId=1,
                     
                 }
             );
             modelBuilder.Entity<Usuario>().HasData(
                 new Usuario
                 {
-                    UsuarioId = 2,
+                    UsuarioId= 1,
                     UsuarioNombre = "User1",
                     UsuarioTlf = "694234651",
                     UsuarioColor_Fav = "amarillo",
@@ -135,7 +135,7 @@ namespace AllKeys.DAL
             modelBuilder.Entity<Usuario>().HasData(
                 new Usuario
                 {
-                    UsuarioId=3,
+                    UsuarioId= 2,
                     UsuarioNombre = "User2",
                     UsuarioTlf = "194244554",
                     UsuarioColor_Fav = "azul",
@@ -148,7 +148,7 @@ namespace AllKeys.DAL
                new Usuario
                {
 
-                   UsuarioId=4,
+                    UsuarioId= 3,
                    UsuarioNombre = "Carlos",
                    UsuarioTlf = "616736340",
                    UsuarioColor_Fav = "azul",
@@ -162,7 +162,7 @@ namespace AllKeys.DAL
                new Usuario
                {
 
-                   UsuarioId = 5,
+                   UsuarioId= 4,
                    UsuarioNombre = "Martin",
                    UsuarioTlf = "611236340",
                    UsuarioColor_Fav = "verde",

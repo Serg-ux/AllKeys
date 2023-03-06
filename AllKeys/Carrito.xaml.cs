@@ -23,13 +23,22 @@ namespace AllKeys
         public Carrito()
         {
             InitializeComponent();
+            dgCarrito.ItemsSource = Games.juegos_carrito;
         }
 
         private void btnComprar_Click(object sender, RoutedEventArgs e)
         {
-            ValidarTarjeta validarTarjeta = new ValidarTarjeta();
-            validarTarjeta.Show();
+            if (dgCarrito.ItemsSource != null)
+            {
+                ValidarTarjeta validarTarjeta = new ValidarTarjeta();
+                validarTarjeta.Show();
+            }
             
+        }
+
+        private void btnLimpiar_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

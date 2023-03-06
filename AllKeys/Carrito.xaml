@@ -18,15 +18,15 @@
 
         <DataGrid x:Name="dgCarrito" IsReadOnly="true" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserAddRows="False" HorizontalAlignment="Center" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="0,113,0,113"  Width="804">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Width="50" Binding="{Binding }"/>
-                <DataGridTextColumn Header="Nombre" Binding="{Binding }"/>
-                <DataGridTextColumn Header="Tipo" Binding="{Binding }"/>
-                <DataGridTextColumn Header="Tipo" Binding="{Binding }"/>
-                <DataGridTextColumn Header="Cantidad" Binding="{Binding }"/>
+
+                <DataGridTextColumn Header="Nombre" Binding="{Binding VideojuegoName}"/>
+                <DataGridTextColumn Header="Tipo" Binding="{Binding Tipo }"/>
+                <DataGridTextColumn Header="Compañia" Binding="{Binding VideojuegoCompania }"/>
+                <DataGridTextColumn Header="Precio" Binding="{Binding Precio }"/>
             </DataGrid.Columns>
         </DataGrid>
         <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,41" Width="326" Grid.Row="1">
-            <Button x:Name="btnLimpiar" ToolTip="eliminar del carrito" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=Clear}"   FontSize="16" Height="43"  Margin="0,0,20,0" Width="152" Cursor="Hand"    />
+            <Button x:Name="btnLimpiar" ToolTip="eliminar del carrito" Style="{DynamicResource MaterialDesignRaisedButton}" Content="{materialDesign:PackIcon Kind=Clear}"   FontSize="16" Height="43"  Margin="0,0,20,0" Width="152" Cursor="Hand" Click="btnLimpiar_Click"    />
             <Button x:Name="btnComprar" Content="Comprar" ToolTip="comprar"  FontSize="16" Height="43" Width="152" Cursor="Hand" Click="btnComprar_Click"    />
         </WrapPanel>
 
