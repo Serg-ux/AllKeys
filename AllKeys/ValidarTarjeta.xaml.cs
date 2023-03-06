@@ -30,5 +30,10 @@ namespace AllKeys
             compraRealizada.Show();
             this.Close();
         }
+
+        private void btnLimpiar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
