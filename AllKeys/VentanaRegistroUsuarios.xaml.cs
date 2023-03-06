@@ -1,4 +1,5 @@
-﻿using AllKeys.Modelo;
+﻿
+using AllKeys.Modelo;
 using ExamenVentas.DAL;
 using System;
 using System.Collections.Generic;
@@ -55,17 +56,11 @@ namespace AllKeys
                     bd.UsuariosRepository.Añadir(usuario);
                     bd.Save();
                     Limpiar();
-                    MessageBox.Show("Usuario Registrado",
-                       "Validar",
-                       MessageBoxButton.OK,
-                       MessageBoxImage.Information);
+                    MessageBox.Show("Se creo el usuario correctamente", "Informcaion", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Problema al guardar el usuario",
-                      "Validar",
-                      MessageBoxButton.OK,
-                      MessageBoxImage.Error);
+                    MessageBox.Show("Errores en los datos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             else MessageBox.Show("Faltan Datos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);

@@ -1,4 +1,5 @@
-﻿using AllKeys.Modelo;
+﻿
+using AllKeys.Modelo;
 using ExamenVentas.DAL;
 using System;
 using System.Collections.Generic;
@@ -59,38 +60,40 @@ namespace AllKeys
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
             String errores = Validacion.errores(videojuego);
-            if (errores.Equals(""))
-            {
-                // Intentamos convertir el valor del TextBox a double y  a int
-                if (double.TryParse(txtPrecio.Text, out double precio) && int.TryParse(txtDisponible.Text, out int disponible))
+            if(txtCompañia.Text!=""||txtDescripcion.Text!=""||txtDisponible.Text!=""||txtNombre.Text!=""|| txtPrecio.Text != "" || txtTipo.Text != ""){
+                if (errores.Equals(""))
                 {
-                    videojuego.Precio = precio;
-                    videojuego.Disponible = disponible;
-
-                    if (nuevo)
+                    // Intentamos convertir el valor del TextBox a double y  a int
+                    if (double.TryParse(txtPrecio.Text, out double precio) && int.TryParse(txtDisponible.Text, out int disponible))
                     {
-                        bd.VideojuegosRepository.Añadir(videojuego);
-                        bd.Save();
-                        dgVideojuegos.ItemsSource = bd.VideojuegosRepository.GetAll();
-                       
+                        videojuego.Precio = precio;
+                        videojuego.Disponible = disponible;
+
+                        if (nuevo)
+                        {
+                            bd.VideojuegosRepository.Añadir(videojuego);
+                            bd.Save();
+                            dgVideojuegos.ItemsSource = bd.VideojuegosRepository.GetAll();
+
+                        }
+                        else
+                        {
+                            bd.VideojuegosRepository.Update(videojuego);
+                            bd.Save();
+                        }
+
+                        Limpiar();
                     }
                     else
                     {
-                        bd.VideojuegosRepository.Update(videojuego);
-                        bd.Save();
+                        // Mostramos un mensaje de error si no se pudo convertir el valor
+                        MessageBox.Show("El precio debe ser un número válido.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
-
-                    Limpiar();
                 }
                 else
                 {
-                    // Mostramos un mensaje de error si no se pudo convertir el valor
-                    MessageBox.Show("El precio debe ser un número válido.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Se encontraron errores en los datos a insertar", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-            }
-            else
-            {
-                //LibreriaV7.MostrarSnackbar(sbNotification, errores, letra: "#FFFF0000");
             }
         }
 

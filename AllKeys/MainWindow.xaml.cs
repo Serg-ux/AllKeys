@@ -29,8 +29,6 @@ namespace AllKeys
             InitializeComponent();
         }
 
-        
-
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
             VentanaRegistroUsuarios registr=new VentanaRegistroUsuarios();
@@ -42,6 +40,7 @@ namespace AllKeys
         {
             if(txtNombre.Text!=""||pb_contra.Password.ToString()!= "")
             {
+               
                 //comprueba si en la bd existe o no el usuario, si existe lo devolverá
                 usuario = bd.UsuariosRepository.ValidarUsuario(txtNombre.Text, pb_contra.Password.ToString());
                 if (usuario != null)

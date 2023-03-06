@@ -123,7 +123,7 @@ namespace AllKeys.DAL
             modelBuilder.Entity<Usuario>().HasData(
                 new Usuario
                 {
-                    UsuarioId= 2,
+                    UsuarioId = 2,
                     UsuarioNombre = "User1",
                     UsuarioTlf = "694234651",
                     UsuarioColor_Fav = "amarillo",
@@ -135,7 +135,7 @@ namespace AllKeys.DAL
             modelBuilder.Entity<Usuario>().HasData(
                 new Usuario
                 {
-                    UsuarioId= 3,
+                    UsuarioId=3,
                     UsuarioNombre = "User2",
                     UsuarioTlf = "194244554",
                     UsuarioColor_Fav = "azul",
@@ -148,7 +148,7 @@ namespace AllKeys.DAL
                new Usuario
                {
 
-                   UsuarioId = 4,
+                   UsuarioId=4,
                    UsuarioNombre = "Carlos",
                    UsuarioTlf = "616736340",
                    UsuarioColor_Fav = "azul",
@@ -162,7 +162,7 @@ namespace AllKeys.DAL
                new Usuario
                {
 
-                   UsuarioId= 5,
+                   UsuarioId = 5,
                    UsuarioNombre = "Martin",
                    UsuarioTlf = "611236340",
                    UsuarioColor_Fav = "verde",
@@ -175,7 +175,7 @@ namespace AllKeys.DAL
             modelBuilder.Entity<Videojuego>().HasData(
                 new Videojuego
                 {
-                    VideojuegoId = 1,
+                    VideojuegoId=1,
                     Descripccion="Juego competitivo basado en plantar bombas y cubrir",
                     Disponible=1,
                     Precio=12.5,

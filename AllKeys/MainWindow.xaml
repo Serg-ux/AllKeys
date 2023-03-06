@@ -49,6 +49,7 @@
                 <StackPanel x:Name="Sp_olvida" HorizontalAlignment="Right" Margin="0,138,79,0" Height="36" Orientation="Horizontal"  VerticalAlignment="Top" Width="194" Grid.ColumnSpan="1" Grid.Row="1" Grid.Column="1"/>
             </Grid>
         </GroupBox>
+        
 
     </Grid>
 </Window>
