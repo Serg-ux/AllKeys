@@ -47,24 +47,28 @@ namespace AllKeys
         }
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            String errores = Validacion.errores(usuario);
-            if (errores.Equals(""))
+            if (txtColorFav.Text != "" || txtContra.Text != "" || txtCorreo.Text != "" || txtNombre.Text != "" || txtTelefono.Text != "" || cbRol.SelectedIndex != -1)
             {
-                bd.UsuariosRepository.Añadir(usuario);
-                bd.Save();
-                Limpiar();
-                MessageBox.Show("Usuario Registrado",
-                   "Validar",
-                   MessageBoxButton.OK,
-                   MessageBoxImage.Information);
+                String errores = Validacion.errores(usuario);
+                if (errores.Equals(""))
+                {
+                    bd.UsuariosRepository.Añadir(usuario);
+                    bd.Save();
+                    Limpiar();
+                    MessageBox.Show("Usuario Registrado",
+                       "Validar",
+                       MessageBoxButton.OK,
+                       MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Problema al guardar el usuario",
+                      "Validar",
+                      MessageBoxButton.OK,
+                      MessageBoxImage.Error);
+                }
             }
-            else
-            {
-                MessageBox.Show("Problema al guardar el usuario",
-                  "Validar",
-                  MessageBoxButton.OK,
-                  MessageBoxImage.Error);
-            }
+            else MessageBox.Show("Faltan Datos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private void btnBorrar_Click(object sender, RoutedEventArgs e)

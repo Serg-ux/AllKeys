@@ -10,7 +10,10 @@ namespace AllKeys.Modelo
     public class Copia
     {
         public int CopiaId { get; set; }
+        //se dice required para que el campo no pueda ser nulo
         [Required]
+        //se le pone que la longitud maxima sea de 20 caracteres,
+        //de lo contrario saltará un mensaje de erro
         [StringLength(maximumLength: 20, ErrorMessage = "Longitud maxima admitida 20 car")]
         public string CopiaCod { get; set; }
         public virtual Videojuego Videojuego { get; set; }

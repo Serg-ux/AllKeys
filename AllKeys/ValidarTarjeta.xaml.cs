@@ -26,9 +26,12 @@ namespace AllKeys
 
         private void btnComprar_Click(object sender, RoutedEventArgs e)
         {
-            CompraRealizada compraRealizada = new CompraRealizada();
-            compraRealizada.Show();
-            this.Close();
+            if (txtApellidos.Text != "" || txtCV.Text != "" || txtnombre.Text != "" || txtTarjeta.Text != "")
+            {
+                CompraRealizada compraRealizada = new CompraRealizada();
+                compraRealizada.Show();
+                this.Close();
+            }
         }
 
         private void btnLimpiar_Click(object sender, RoutedEventArgs e)

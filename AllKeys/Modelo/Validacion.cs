@@ -13,7 +13,7 @@ namespace Usuarios.Modelo
         public static string errores(Object obj)
         {
             string mensError = "";
-
+            //sirve para almacenar y mostrar los errores que pongamos en cada clase
             ValidationContext validationContext = new ValidationContext(obj, null, null);
             List<ValidationResult> errores = new List<ValidationResult>();
             Validator.TryValidateObject(obj, validationContext, errores, true);

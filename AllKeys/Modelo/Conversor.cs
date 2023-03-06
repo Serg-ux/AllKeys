@@ -8,6 +8,7 @@ namespace Usuarios.Modelo
 {
   public  class Conversor
     {
+        //sirve para convertir una lista pen una tabla de datos
        public static List<T> ConvertDataTable<T>(DataTable dt)
         {
             List<T> data = new List<T>();
@@ -18,6 +19,7 @@ namespace Usuarios.Modelo
             }
             return data;
         }
+        //coger un item a traver de un parametro
         public static T GetItem<T>(DataRow dr)
         {
             Type temp = typeof(T);
