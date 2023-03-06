@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AllKeys.Migrations
 {
     [DbContext(typeof(VentasContext))]
-    [Migration("20230306133338_primera")]
+    [Migration("20230306134004_primera")]
     partial class primera
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -260,7 +260,7 @@ namespace AllKeys.Migrations
                             Disponible = 1,
                             Precio = 12.5,
                             Tipo = "Shooter",
-                            VideojuegoCompania = "Valve,",
+                            VideojuegoCompania = "Valve",
                             VideojuegoName = "Csgo"
                         },
                         new
@@ -268,10 +268,10 @@ namespace AllKeys.Migrations
                             VideojuegoId = 2,
                             Descripccion = "Juego competitivo basado en plantar bombas y cubrir",
                             Disponible = 1,
-                            Precio = 12.5,
+                            Precio = 14.0,
                             Tipo = "Shooter",
-                            VideojuegoCompania = "Valve,",
-                            VideojuegoName = "Csgo"
+                            VideojuegoCompania = "Riot Games",
+                            VideojuegoName = "Valorant"
                         },
                         new
                         {
@@ -280,7 +280,7 @@ namespace AllKeys.Migrations
                             Disponible = 1,
                             Precio = 30.0,
                             Tipo = "Shooter",
-                            VideojuegoCompania = "Activision,",
+                            VideojuegoCompania = "Activision",
                             VideojuegoName = "Call of Duty"
                         },
                         new
@@ -290,7 +290,7 @@ namespace AllKeys.Migrations
                             Disponible = 1,
                             Precio = 16.0,
                             Tipo = "Survival",
-                            VideojuegoCompania = "Mojang,",
+                            VideojuegoCompania = "Mojang",
                             VideojuegoName = "Minecraft"
                         },
                         new

@@ -180,7 +180,7 @@ namespace AllKeys.DAL
                     Disponible=1,
                     Precio=12.5,
                     Tipo="Shooter",
-                    VideojuegoCompania="Valve,",
+                    VideojuegoCompania="Valve",
                     VideojuegoName="Csgo"
                 }
             );
@@ -190,10 +190,10 @@ namespace AllKeys.DAL
                    VideojuegoId = 2,
                    Descripccion = "Juego competitivo basado en plantar bombas y cubrir",
                    Disponible = 1,
-                   Precio = 12.5,
+                   Precio = 14,
                    Tipo = "Shooter",
-                   VideojuegoCompania = "Valve,",
-                   VideojuegoName = "Csgo"
+                   VideojuegoCompania = "Riot Games",
+                   VideojuegoName = "Valorant"
                }
            );
             modelBuilder.Entity<Videojuego>().HasData(
@@ -204,7 +204,7 @@ namespace AllKeys.DAL
                    Disponible = 1,
                    Precio = 30,
                    Tipo = "Shooter",
-                   VideojuegoCompania = "Activision,",
+                   VideojuegoCompania = "Activision",
                    VideojuegoName = "Call of Duty"
                }
            );
@@ -216,7 +216,7 @@ namespace AllKeys.DAL
                    Disponible = 1,
                    Precio = 16,
                    Tipo = "Survival",
-                   VideojuegoCompania = "Mojang,",
+                   VideojuegoCompania = "Mojang",
                    VideojuegoName = "Minecraft"
                }
            );

@@ -56,22 +56,26 @@ namespace AllKeys
 
         private void btnGuardar_Click_1(object sender, RoutedEventArgs e)
         {
-            String errores = Validacion.errores(usuario);
-            if (errores.Equals(""))
-            {
-                if (nuevo)
+           if(txtColorFav.Text!="" && txtContra.Text!="" && txtCorreo.Text!="" && txtNombre.Text!="" && txtTelefono.Text!="" && cbRol.SelectedIndex != -1)
+           {
+                String errores = Validacion.errores(usuario);
+                if (errores.Equals(""))
                 {
-                    bd.UsuariosRepository.Añadir(usuario);
-                    bd.Save();
+                    if (nuevo)
+                    {
+                        bd.UsuariosRepository.Añadir(usuario);
+                        bd.Save();
+                    }
+                    else
+                    {
+                        bd.UsuariosRepository.Update(usuario);
+                        bd.Save();
+                    }
+                    Limpiar();
+                    dgUsuarios.ItemsSource = bd.UsuariosRepository.UsuariosCompletos();
                 }
-                else
-                {
-                    bd.UsuariosRepository.Update(usuario);
-                    bd.Save();
-                }
-                Limpiar();
-                dgUsuarios.ItemsSource = bd.UsuariosRepository.UsuariosCompletos();
-            }
+           }else
+                MessageBox.Show("Faltan Datos", "Error Login", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private void btnBorrar_Click_1(object sender, RoutedEventArgs e)

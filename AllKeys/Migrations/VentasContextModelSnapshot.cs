@@ -258,7 +258,7 @@ namespace AllKeys.Migrations
                             Disponible = 1,
                             Precio = 12.5,
                             Tipo = "Shooter",
-                            VideojuegoCompania = "Valve,",
+                            VideojuegoCompania = "Valve",
                             VideojuegoName = "Csgo"
                         },
                         new
@@ -266,10 +266,10 @@ namespace AllKeys.Migrations
                             VideojuegoId = 2,
                             Descripccion = "Juego competitivo basado en plantar bombas y cubrir",
                             Disponible = 1,
-                            Precio = 12.5,
+                            Precio = 14.0,
                             Tipo = "Shooter",
-                            VideojuegoCompania = "Valve,",
-                            VideojuegoName = "Csgo"
+                            VideojuegoCompania = "Riot Games",
+                            VideojuegoName = "Valorant"
                         },
                         new
                         {
@@ -278,7 +278,7 @@ namespace AllKeys.Migrations
                             Disponible = 1,
                             Precio = 30.0,
                             Tipo = "Shooter",
-                            VideojuegoCompania = "Activision,",
+                            VideojuegoCompania = "Activision",
                             VideojuegoName = "Call of Duty"
                         },
                         new
@@ -288,7 +288,7 @@ namespace AllKeys.Migrations
                             Disponible = 1,
                             Precio = 16.0,
                             Tipo = "Survival",
-                            VideojuegoCompania = "Mojang,",
+                            VideojuegoCompania = "Mojang",
                             VideojuegoName = "Minecraft"
                         },
                         new

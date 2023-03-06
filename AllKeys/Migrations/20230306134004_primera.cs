@@ -144,10 +144,10 @@ namespace AllKeys.Migrations
                 columns: new[] { "VideojuegoId", "Descripccion", "Disponible", "Precio", "Tipo", "VideojuegoCompania", "VideojuegoName" },
                 values: new object[,]
                 {
-                    { 1, "Juego competitivo basado en plantar bombas y cubrir", 1, 12.5, "Shooter", "Valve,", "Csgo" },
-                    { 2, "Juego competitivo basado en plantar bombas y cubrir", 1, 12.5, "Shooter", "Valve,", "Csgo" },
-                    { 3, "Shooter", 1, 30.0, "Shooter", "Activision,", "Call of Duty" },
-                    { 4, "Juego creativo", 1, 16.0, "Survival", "Mojang,", "Minecraft" },
+                    { 1, "Juego competitivo basado en plantar bombas y cubrir", 1, 12.5, "Shooter", "Valve", "Csgo" },
+                    { 2, "Juego competitivo basado en plantar bombas y cubrir", 1, 14.0, "Shooter", "Riot Games", "Valorant" },
+                    { 3, "Shooter", 1, 30.0, "Shooter", "Activision", "Call of Duty" },
+                    { 4, "Juego creativo", 1, 16.0, "Survival", "Mojang", "Minecraft" },
                     { 5, "Perdida de tiempo", 1, 0.0, "MMO", "Riot Games", "League of Legends" }
                 });
 
