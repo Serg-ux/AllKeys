@@ -60,7 +60,7 @@ namespace AllKeys
                 }
                 else
                 {
-                    MessageBox.Show("Errores en los datos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show(errores, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             else MessageBox.Show("Faltan Datos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);

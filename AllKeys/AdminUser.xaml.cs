@@ -76,7 +76,7 @@ namespace AllKeys
                     dgUsuarios.ItemsSource = bd.UsuariosRepository.GetAll();
                     MessageBox.Show("Guardado correctamente", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
-                else MessageBox.Show("Error al guardar usuario", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                else MessageBox.Show(errores, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
                 MessageBox.Show("Faltan Datos", "Error Login", MessageBoxButton.OK, MessageBoxImage.Error);

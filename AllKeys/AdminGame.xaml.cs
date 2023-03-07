@@ -93,7 +93,7 @@ namespace AllKeys
                 }
                 else
                 {
-                    MessageBox.Show("Se encontraron errores en los datos a insertar", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show(errores, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
@@ -144,8 +144,8 @@ namespace AllKeys
                 }
                     Limpiar_Copia();
             }
-                
-        
+            else MessageBox.Show(errores, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+
         }
         private void Limpiar_Copia()
         {
