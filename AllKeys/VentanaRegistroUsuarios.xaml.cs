@@ -30,7 +30,14 @@ namespace AllKeys
             InitializeComponent();
             gbFormulario.DataContext=usuario;
 
-            cbRol.ItemsSource = bd.RolesRepository.GetAll();
+            // Obtener la colección de roles desde la base de datos y ordenarla por nombre
+            var roles = bd.RolesRepository.GetAll().OrderBy(r => r.RolNombre);
+
+            // Seleccionar el segundo y tercer rol y asignarlos al combobox
+            var rolesSeleccionados = roles.Skip(1).Take(2);
+            cbRol.ItemsSource = rolesSeleccionados;
+
+            // Establecer las propiedades DisplayMemberPath y SelectedValuePath como antes
             cbRol.DisplayMemberPath = "RolNombre";
             cbRol.SelectedValuePath = "RolId";
         }
