@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace AllKeys.Modelo
 {
@@ -23,6 +24,19 @@ namespace AllKeys.Modelo
         {
             Copias=new HashSet<Copia>();
             ObtenerDescuentos = new HashSet<ObtenerDescuento>();
+        }
+        public static bool ValidarSoloNumeros(string texto)
+        {
+            Regex regex = new Regex(@"^\d+$");
+
+            if (regex.IsMatch(texto))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

@@ -30,6 +30,13 @@ namespace AllKeys
         public Principal()
         {
             InitializeComponent();
+            Usuario usuario = new Usuario();
+            usuario = bd.UsuariosRepository.BuscarUsId(MainWindow.idUS);
+            if (usuario.RolId == 1)
+            {
+                Sp_admin.Visibility = Visibility.Visible;
+            }
+            else Sp_admin.Visibility = Visibility.Hidden;
         }
         
         private void Juegosbt_Click(object sender, RoutedEventArgs e)

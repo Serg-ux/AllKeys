@@ -30,35 +30,21 @@ namespace AllKeys
         {
             if (txtApellidos.Text != "" && txtCV.Text != "" && txtnombre.Text != "" && txtTarjeta.Text != "")
             {
-                string str = txtTarjeta.Text;
-                int number1;
-                bool canConvert = int.TryParse(str, out number1);
-                if (canConvert==true)
+                if (UsuarioRegistrado.ValidarSoloNumeros(txtTarjeta.Text) == true)
                 {
-                    // la conversión fue exitosa, el valor convertido se encuentra en la variable "result"
-                    string cvString = txtCV.Text; //devolverá false si el texto no se puede castear a int 
-                    int number2 = 0;
-                    bool canConvertCV = int.TryParse(cvString, out number2);
-                    if (canConvertCV == true)
+                    if (UsuarioRegistrado.ValidarSoloNumeros(txtCV.Text) == true)
                     {
                         usuarioRegistrado.Tarjeta = txtTarjeta.Text;
-                        
+                        usuarioRegistrado.UsuarioId = MainWindow.idUS;
                         Principal.bd.UsuariosRegistradosRepository.Añadir(usuarioRegistrado);
 
                         CompraRealizada compraRealizada = new CompraRealizada();
                         compraRealizada.Show();
                         this.Close();
-                       
                     }
-                    else MessageBox.Show("Valor del CV incorrecto", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    else MessageBox.Show("CV erroneo", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-                else
-                {
-                    // la conversión falló
-                    MessageBox.Show("Valor de la tarjeta incorrecto", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-
-
+                else MessageBox.Show("Tarjeta erronea", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else MessageBox.Show("Faltan datos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
