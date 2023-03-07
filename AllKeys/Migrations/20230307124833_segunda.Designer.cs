@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AllKeys.Migrations
 {
     [DbContext(typeof(VentasContext))]
-    [Migration("20230307114740_primera")]
-    partial class primera
+    [Migration("20230307124833_segunda")]
+    partial class segunda
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -123,11 +123,9 @@ namespace AllKeys.Migrations
             modelBuilder.Entity("AllKeys.Modelo.Usuario", b =>
                 {
                     b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("RolId")
                         .HasColumnType("int");
@@ -161,12 +159,10 @@ namespace AllKeys.Migrations
 
                     b.ToTable("Usuarios");
 
-                    b.HasDiscriminator<string>("Discriminator").HasValue("Usuario");
-
                     b.HasData(
                         new
                         {
-                            UsuarioId = 0,
+                            UsuarioId = 1,
                             RolId = 1,
                             UsuarioColor_Fav = "amarillo",
                             UsuarioContra = "abc123.",
@@ -176,7 +172,7 @@ namespace AllKeys.Migrations
                         },
                         new
                         {
-                            UsuarioId = 1,
+                            UsuarioId = 2,
                             RolId = 2,
                             UsuarioColor_Fav = "amarillo",
                             UsuarioContra = "abc123.",
@@ -186,7 +182,7 @@ namespace AllKeys.Migrations
                         },
                         new
                         {
-                            UsuarioId = 2,
+                            UsuarioId = 3,
                             RolId = 3,
                             UsuarioColor_Fav = "azul",
                             UsuarioContra = "abc123.",
@@ -196,7 +192,7 @@ namespace AllKeys.Migrations
                         },
                         new
                         {
-                            UsuarioId = 3,
+                            UsuarioId = 4,
                             RolId = 2,
                             UsuarioColor_Fav = "azul",
                             UsuarioContra = "abc123.",
@@ -206,7 +202,7 @@ namespace AllKeys.Migrations
                         },
                         new
                         {
-                            UsuarioId = 4,
+                            UsuarioId = 5,
                             RolId = 2,
                             UsuarioColor_Fav = "verde",
                             UsuarioContra = "abc123.",
@@ -214,6 +210,29 @@ namespace AllKeys.Migrations
                             UsuarioNombre = "Martin",
                             UsuarioTlf = "611236340"
                         });
+                });
+
+            modelBuilder.Entity("AllKeys.Modelo.UsuarioRegistrado", b =>
+                {
+                    b.Property<int>("UsuarioRegistradoId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Tarjeta")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(18)")
+                        .HasMaxLength(18);
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UsuarioRegistradoId");
+
+                    b.HasIndex("UsuarioId")
+                        .IsUnique();
+
+                    b.ToTable("UsuarioRegistrados");
                 });
 
             modelBuilder.Entity("AllKeys.Modelo.Videojuego", b =>
@@ -303,21 +322,6 @@ namespace AllKeys.Migrations
                             VideojuegoCompania = "Riot Games",
                             VideojuegoName = "League of Legends"
                         });
-                });
-
-            modelBuilder.Entity("AllKeys.Modelo.UsuarioRegistrado", b =>
-                {
-                    b.HasBaseType("AllKeys.Modelo.Usuario");
-
-                    b.Property<string>("Tarjeta")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(18)")
-                        .HasMaxLength(18);
-
-                    b.Property<int>("UsuarioRegistradoId")
-                        .HasColumnType("int");
-
-                    b.HasDiscriminator().HasValue("UsuarioRegistrado");
                 });
 
             modelBuilder.Entity("AllKeys.Modelo.Copia", b =>

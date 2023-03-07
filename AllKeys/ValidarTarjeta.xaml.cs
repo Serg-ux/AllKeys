@@ -42,6 +42,7 @@ namespace AllKeys
                     if (canConvertCV == true)
                     {
                         usuarioRegistrado.Tarjeta = txtTarjeta.Text;
+                        
                         Principal.bd.UsuariosRegistradosRepository.Añadir(usuarioRegistrado);
 
                         CompraRealizada compraRealizada = new CompraRealizada();

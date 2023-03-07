@@ -2,7 +2,7 @@
 
 namespace AllKeys.Migrations
 {
-    public partial class primera : Migration
+    public partial class segunda : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -54,16 +54,14 @@ namespace AllKeys.Migrations
                 name: "Usuarios",
                 columns: table => new
                 {
-                    UsuarioId = table.Column<int>(nullable: false),
+                    UsuarioId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     UsuarioNombre = table.Column<string>(maxLength: 30, nullable: false),
                     UsuarioContra = table.Column<string>(maxLength: 20, nullable: false),
                     UsuarioCorreo = table.Column<string>(nullable: false),
                     UsuarioTlf = table.Column<string>(nullable: false),
                     UsuarioColor_Fav = table.Column<string>(maxLength: 20, nullable: false),
-                    RolId = table.Column<int>(nullable: false),
-                    Discriminator = table.Column<string>(nullable: false),
-                    UsuarioRegistradoId = table.Column<int>(nullable: true),
-                    Tarjeta = table.Column<string>(maxLength: 18, nullable: true)
+                    RolId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -73,6 +71,26 @@ namespace AllKeys.Migrations
                         column: x => x.RolId,
                         principalTable: "Roles",
                         principalColumn: "RolId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UsuarioRegistrados",
+                columns: table => new
+                {
+                    UsuarioRegistradoId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Tarjeta = table.Column<string>(maxLength: 18, nullable: false),
+                    UsuarioId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UsuarioRegistrados", x => x.UsuarioRegistradoId);
+                    table.ForeignKey(
+                        name: "FK_UsuarioRegistrados_Usuarios_UsuarioId",
+                        column: x => x.UsuarioId,
+                        principalTable: "Usuarios",
+                        principalColumn: "UsuarioId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -90,10 +108,10 @@ namespace AllKeys.Migrations
                 {
                     table.PrimaryKey("PK_Copias", x => x.CopiaId);
                     table.ForeignKey(
-                        name: "FK_Copias_Usuarios_UsuarioRegistradoId",
+                        name: "FK_Copias_UsuarioRegistrados_UsuarioRegistradoId",
                         column: x => x.UsuarioRegistradoId,
-                        principalTable: "Usuarios",
-                        principalColumn: "UsuarioId",
+                        principalTable: "UsuarioRegistrados",
+                        principalColumn: "UsuarioRegistradoId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Copias_Videojuegos_VideojuegoId",
@@ -122,10 +140,10 @@ namespace AllKeys.Migrations
                         principalColumn: "DescuentoId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ObtenerDescuento_Usuarios_UsuarioRegistradoId",
+                        name: "FK_ObtenerDescuento_UsuarioRegistrados_UsuarioRegistradoId",
                         column: x => x.UsuarioRegistradoId,
-                        principalTable: "Usuarios",
-                        principalColumn: "UsuarioId",
+                        principalTable: "UsuarioRegistrados",
+                        principalColumn: "UsuarioRegistradoId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -153,14 +171,14 @@ namespace AllKeys.Migrations
 
             migrationBuilder.InsertData(
                 table: "Usuarios",
-                columns: new[] { "UsuarioId", "Discriminator", "RolId", "UsuarioColor_Fav", "UsuarioContra", "UsuarioCorreo", "UsuarioNombre", "UsuarioTlf" },
+                columns: new[] { "UsuarioId", "RolId", "UsuarioColor_Fav", "UsuarioContra", "UsuarioCorreo", "UsuarioNombre", "UsuarioTlf" },
                 values: new object[,]
                 {
-                    { 0, "Usuario", 1, "amarillo", "abc123.", "admin@gmail.com", "Admin", "616756340" },
-                    { 1, "Usuario", 2, "amarillo", "abc123.", "user1@gmail.com", "User1", "694234651" },
-                    { 3, "Usuario", 2, "azul", "abc123.", "carlos@gmail.com", "Carlos", "616736340" },
-                    { 4, "Usuario", 2, "verde", "abc123.", "martin@gmail.com", "Martin", "611236340" },
-                    { 2, "Usuario", 3, "azul", "abc123.", "user2@gmail.com", "User2", "194244554" }
+                    { 1, 1, "amarillo", "abc123.", "admin@gmail.com", "Admin", "616756340" },
+                    { 2, 2, "amarillo", "abc123.", "user1@gmail.com", "User1", "694234651" },
+                    { 4, 2, "azul", "abc123.", "carlos@gmail.com", "Carlos", "616736340" },
+                    { 5, 2, "verde", "abc123.", "martin@gmail.com", "Martin", "611236340" },
+                    { 3, 3, "azul", "abc123.", "user2@gmail.com", "User2", "194244554" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -184,6 +202,12 @@ namespace AllKeys.Migrations
                 column: "UsuarioRegistradoId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_UsuarioRegistrados_UsuarioId",
+                table: "UsuarioRegistrados",
+                column: "UsuarioId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Usuarios_RolId",
                 table: "Usuarios",
                 column: "RolId");
@@ -202,6 +226,9 @@ namespace AllKeys.Migrations
 
             migrationBuilder.DropTable(
                 name: "Descuentos");
+
+            migrationBuilder.DropTable(
+                name: "UsuarioRegistrados");
 
             migrationBuilder.DropTable(
                 name: "Usuarios");

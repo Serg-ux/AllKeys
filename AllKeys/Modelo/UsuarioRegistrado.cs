@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AllKeys.Modelo
 {
-    public class UsuarioRegistrado:Usuario
+    public class UsuarioRegistrado
     {
         public int UsuarioRegistradoId { get; set; }
         [Required]
@@ -18,6 +18,7 @@ namespace AllKeys.Modelo
         public virtual ICollection<ObtenerDescuento> ObtenerDescuentos { get; set; }
         public virtual Usuario Usuario { get; set; }
         public int UsuarioId { get; set; }
+
         public UsuarioRegistrado()
         {
             Copias=new HashSet<Copia>();
