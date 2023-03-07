@@ -2,7 +2,7 @@
 
 namespace AllKeys.Migrations
 {
-    public partial class segunda : Migration
+    public partial class primera : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

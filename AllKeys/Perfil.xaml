@@ -18,7 +18,7 @@
 
 
         </Grid.RowDefinitions>
-        <GroupBox x:Name="gbFormularioUser" Header="Datos de usuario" Margin="30,50,30,110" MaxHeight="300" MaxWidth="1000"  Background="White"  >
+        <GroupBox x:Name="gbFormularioUser" Header="Datos de usuario" Margin="30,50,30,110" MaxHeight="450" MaxWidth="1300"  Background="White"  >
             <Grid x:Name="gContenedor5a" Margin="0,0,0,36">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>

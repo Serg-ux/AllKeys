@@ -28,7 +28,7 @@
             <WrapPanel>
                 <Button x:Name="btnVolver" Content="{materialDesign:PackIcon Kind=ArrowBack}"  ToolTip="volver inicio" Style="{DynamicResource MaterialDesignRaisedButton}"  FontSize="14" Grid.Row="0" Cursor="Hand" Width="74" Margin="20,33,0,33" HorizontalAlignment="Left" Click="btnVolver_Click" Height="26"/>
             </WrapPanel>
-            <GroupBox x:Name="gbFormulario" Header="Datos de usuario" Margin="10,14,10,2" Grid.Row="1" Background="White" >
+            <GroupBox x:Name="gbFormulario" Header="Datos de usuario" Margin="10,14,10,2" Grid.Row="1" MaxHeight="450" MaxWidth="1300" Background="White" >
                 <Grid x:Name="gContenedor5a">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>

@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
         <Label Content="VIDEOJUEGOS" HorizontalAlignment="Left" Height="31" Margin="34,0,0,0" VerticalAlignment="Top" />
         <Label Content="COPIAS" HorizontalAlignment="Right" Height="31" Margin="0,0,236,0" VerticalAlignment="Top" />
-        <DataGrid x:Name="dgVideojuegos" CanUserResizeColumns="False" CanUserResizeRows="False" IsReadOnly="False" CanUserAddRows="False" HorizontalAlignment="Left" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="36,36,0,10" SelectionChanged="dgVideojuegos_SelectionChanged">
+        <DataGrid x:Name="dgVideojuegos" CanUserResizeColumns="False" CanUserResizeRows="False" IsReadOnly="True" CanUserAddRows="False" HorizontalAlignment="Left" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="36,36,0,10" SelectionChanged="dgVideojuegos_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="50" Binding="{Binding Path=VideojuegoId}"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Path=VideojuegoName}"/>

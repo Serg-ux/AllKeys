@@ -17,7 +17,7 @@
             <RowDefinition Height="320"/>
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="dgUsuarios" IsReadOnly="False" HorizontalAlignment="Center" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserAddRows="False" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="0,23,0,23"   SelectionChanged="dgUsuarios_SelectionChanged" Width="1186">
+        <DataGrid x:Name="dgUsuarios" IsReadOnly="True" HorizontalAlignment="Center" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserAddRows="False" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="0,23,0,23"   SelectionChanged="dgUsuarios_SelectionChanged" Width="1186">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="50" Binding="{Binding UsuarioId}"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding UsuarioNombre}"/>
