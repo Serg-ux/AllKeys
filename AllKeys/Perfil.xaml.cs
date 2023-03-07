@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Usuarios.Modelo;
 
 namespace AllKeys
 {
@@ -30,15 +31,24 @@ namespace AllKeys
             gbFormularioUser.DataContext=usuario;
             cbRol.ItemsSource = Principal.bd.RolesRepository.GetAll();
             cbRol.DisplayMemberPath = "RolNombre";
-            cbRol.SelectedIndex = usuario.RolId;
+            cbRol.SelectedValuePath = "RolId";
         }
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
             if (txtColorFav.Text != "" && txtContra.Text != "" && txtCorreo.Text != "" && txtNombre.Text != "" && txtTelefono.Text != "" && cbRol.SelectedIndex != -1)
             {
-
+                String errores = Validacion.errores(usuario);
+                if (errores.Equals(""))
+                {
+                        Principal.bd.UsuariosRepository.Update(usuario);
+                        Principal.bd.Save();
+                    MessageBox.Show("Guardado correctamente", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else MessageBox.Show("Error al guardar usuario", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+            else
+                MessageBox.Show("Faltan Datos", "Error Login", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }
