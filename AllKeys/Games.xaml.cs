@@ -23,7 +23,7 @@ namespace AllKeys
     public partial class Games : Page
     {
         Videojuego videojuego = new Videojuego();
-        public static List<Videojuego>juegos_carrito= new List<Videojuego>();
+        
         public Games()
         {
             InitializeComponent();
@@ -42,7 +42,7 @@ namespace AllKeys
             // Obtener el elemento seleccionado en la tabla dgVideojuegos
             Videojuego videojuego = (Videojuego)dgVideojuegos.SelectedItem;
             // Agregar el elemento seleccionado a la lista juegos_carrito
-            juegos_carrito.Add(videojuego);
+            Carrito.juegos_carrito.Add(videojuego);
             MessageBox.Show("Añadido al carrito", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }

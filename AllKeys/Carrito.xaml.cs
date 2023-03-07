@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AllKeys.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -21,26 +22,28 @@ namespace AllKeys
     /// </summary>
     public partial class Carrito : Page
     {
+        public static List<Videojuego> juegos_carrito = new List<Videojuego>();
         public Carrito()
         {
             InitializeComponent();
-            dgCarrito.ItemsSource = Games.juegos_carrito;
+            dgCarrito.ItemsSource =juegos_carrito;
         }
 
         private void btnComprar_Click(object sender, RoutedEventArgs e)
         {
-            if (dgCarrito.ItemsSource != null)
+            if (juegos_carrito.Count()>0)
             {
                 ValidarTarjeta validarTarjeta = new ValidarTarjeta();
                 validarTarjeta.Show();
             }
-            
+            else MessageBox.Show("Carrito vacio", "Informacion", MessageBoxButton.OK, MessageBoxImage.Warning);
+
         }
 
         private void btnLimpiar_Click(object sender, RoutedEventArgs e)
         {
-            Games.juegos_carrito.Clear();
-            
+            juegos_carrito = new List<Videojuego>();
+            dgCarrito.ItemsSource = juegos_carrito;
         }
     }
 }

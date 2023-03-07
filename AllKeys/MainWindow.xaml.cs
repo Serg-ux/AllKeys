@@ -24,6 +24,7 @@ namespace AllKeys
     {
         Usuario usuario = new Usuario();
         UnitOfWork bd = new UnitOfWork();
+        public static int idUS;
         public MainWindow()
         {
             InitializeComponent();
@@ -45,6 +46,7 @@ namespace AllKeys
                 usuario = bd.UsuariosRepository.ValidarUsuario(txtNombre.Text, pb_contra.Password.ToString());
                 if (usuario != null)
                 {
+                    idUS = usuario.UsuarioId;
                     Principal principal = new Principal();
                     principal.Show();
                     this.Close();

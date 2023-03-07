@@ -21,9 +21,24 @@ namespace AllKeys
     /// </summary>
     public partial class Perfil : Page
     {
+        Usuario usuario = new Usuario();
+        int idUSR= MainWindow.idUS;
         public Perfil()
         {
             InitializeComponent();
+            usuario = Principal.bd.UsuariosRepository.BuscarUsId(idUSR);
+            gbFormularioUser.DataContext=usuario;
+            cbRol.ItemsSource = Principal.bd.RolesRepository.GetAll();
+            cbRol.DisplayMemberPath = "RolNombre";
+            cbRol.SelectedIndex = usuario.RolId;
+        }
+
+        private void btnGuardar_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtColorFav.Text != "" && txtContra.Text != "" && txtCorreo.Text != "" && txtNombre.Text != "" && txtTelefono.Text != "" && cbRol.SelectedIndex != -1)
+            {
+
+            }
         }
     }
 }

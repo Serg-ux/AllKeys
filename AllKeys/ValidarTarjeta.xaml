@@ -29,7 +29,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <TextBox TabIndex="0" Grid.Column="0" x:Name="txtTarjeta" VerticalAlignment="Top" Margin="10,63,10,0" FontSize="14" MaxLength="20" Height="31"/>
+                <TextBox TabIndex="0" Grid.Column="0" x:Name="txtTarjeta" VerticalAlignment="Top" Margin="10,63,10,0" FontSize="14" MaxLength="18" Height="31"/>
                 <TextBox TabIndex="1" Grid.Row="1"  x:Name="txtCV" VerticalAlignment="Top" Margin="10,67,10,0" FontSize="14"  MaxLength="3" Height="27"/>
                 <TextBox TabIndex="2" Grid.Column="1" Grid.Row="0"  x:Name="txtnombre" VerticalAlignment="Top" Margin="10,63,10,0" FontSize="14"   MaxLength="30" Height="31"/>
                 <TextBox TabIndex="4" Grid.Column="1" Grid.Row="1"  x:Name="txtApellidos" VerticalAlignment="Top" Margin="10,66,10,0" FontSize="14" MaxLength="200" Height="28"/>

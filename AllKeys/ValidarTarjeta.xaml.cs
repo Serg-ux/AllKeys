@@ -28,18 +28,48 @@ namespace AllKeys
 
         private void btnComprar_Click(object sender, RoutedEventArgs e)
         {
-            if (txtApellidos.Text != "" || txtCV.Text != "" || txtnombre.Text != "" || txtTarjeta.Text != "")
+            if (txtApellidos.Text != "" && txtCV.Text != "" && txtnombre.Text != "" && txtTarjeta.Text != "")
             {
-                CompraRealizada compraRealizada = new CompraRealizada();
-                compraRealizada.Show();
-                this.Close();
+                string str = txtTarjeta.Text;
+                int number1;
+                bool canConvert = int.TryParse(str, out number1);
+                if (canConvert==true)
+                {
+                    // la conversión fue exitosa, el valor convertido se encuentra en la variable "result"
+                    string cvString = txtCV.Text; //devolverá false si el texto no se puede castear a int 
+                    int number2 = 0;
+                    bool canConvertCV = int.TryParse(cvString, out number2);
+                    if (canConvertCV == true)
+                    {
+                        usuarioRegistrado.Tarjeta = txtTarjeta.Text;
+                        Principal.bd.UsuariosRegistradosRepository.Añadir(usuarioRegistrado);
+
+                        CompraRealizada compraRealizada = new CompraRealizada();
+                        compraRealizada.Show();
+                        this.Close();
+                       
+                    }
+                    else MessageBox.Show("Valor del CV incorrecto", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else
+                {
+                    // la conversión falló
+                    MessageBox.Show("Valor de la tarjeta incorrecto", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+
             }
             else MessageBox.Show("Faltan datos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private void btnLimpiar_Click(object sender, RoutedEventArgs e)
         {
-            
+            usuarioRegistrado = new UsuarioRegistrado();
+            txtApellidos.Text = "";
+            txtCV.Text = ""; 
+            txtnombre.Text = "";
+            txtTarjeta.Text = "";
+
         }
     }
 }

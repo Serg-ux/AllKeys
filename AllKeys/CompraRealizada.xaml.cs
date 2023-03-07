@@ -23,5 +23,12 @@ namespace AllKeys
         {
             InitializeComponent();
         }
+
+        private void btInicio_Click(object sender, RoutedEventArgs e)
+        {
+            Principal principal = new Principal();
+            principal.Show();
+            this.Close();
+        }
     }
 }
