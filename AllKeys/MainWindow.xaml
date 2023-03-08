@@ -15,41 +15,32 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="Usuarios" Height="650" MinHeight="650" MaxHeight="650" Width="550" MinWidth="550" MaxWidth="550" WindowStartupLocation="CenterScreen">
     <Grid Name="gContenedor"  Background="#02735E"  IsEnabled="True" Visibility="Visible">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="296*" />
-            <RowDefinition Height="225*"/>
 
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0*"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <GroupBox Header="Inicio de sesión"  Grid.Row="0" Margin="12,16,12,16"  Grid.RowSpan="2" Grid.Column="1" >
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition Height="100"/>
                 </Grid.RowDefinitions>
-
-                <TextBox x:Name="txtNombre" FontSize="16" materialDesign:HintAssist.Hint="Usuario" MaxLength="30" Grid.ColumnSpan="2" Margin="23,82,79,58">
-
-                </TextBox>
+                <Image  Height="180" VerticalAlignment="Center" HorizontalAlignment="Center" Width="182" Source="/Allkeys-removebg-preview.png"/>
+                <TextBox x:Name="txtNombre" FontSize="16" materialDesign:HintAssist.Hint="Usuario" MaxLength="30" Margin="23,10,79,130" Grid.Row="1"/>
                 <PasswordBox
                       x:Name="pb_contra" FontSize="16"
                       materialDesign:HintAssist.Hint="Contraseña"
                       materialDesign:TextFieldAssist.HasClearButton="True"
-                      Margin="23,82,79,58" Grid.Row="1"
+                      Margin="23,130,79,10" Grid.Row="1"
                       MaxLength="20"
                         />
-                <StackPanel x:Name="Sp_bts" HorizontalAlignment="Left" Margin="254,125,0,0" Height="53" Orientation="Horizontal"  VerticalAlignment="Top" Width="254" Grid.ColumnSpan="2" Grid.Row="2">
+                <StackPanel x:Name="Sp_bts" HorizontalAlignment="Right"  Height="53" Orientation="Horizontal"  VerticalAlignment="Bottom" Width="254" Grid.ColumnSpan="2" Grid.Row="2">
                     <Button x:Name="btnEntrar" Margin="0,0,10,0" Content="Entrar" FontSize="16" TabIndex="2" Height="48" Width="114" Click="btnEntrar_Click" Cursor="Hand"/>
                     <Button x:Name="btnRegistrar" Content="Registrar"   FontSize="16" TabIndex="3" Height="48" Width="114" Click="btnRegistrar_Click"  Cursor="Hand"  />
                 </StackPanel>
                 <StackPanel x:Name="Sp_olvida" HorizontalAlignment="Right" Margin="0,138,79,0" Height="36" Orientation="Horizontal"  VerticalAlignment="Top" Width="194" Grid.ColumnSpan="1" Grid.Row="1" Grid.Column="1"/>
+
             </Grid>
         </GroupBox>
-        
+
 
     </Grid>
 </Window>
