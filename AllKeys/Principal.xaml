@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AllKeys"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Principal" d:Height="720" d:Width="1280"
+        Title="Principal" d:Height="720" d:Width="1280" MinWidth="1280" MinHeight="720"
         WindowStartupLocation="CenterScreen"
         
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"  
