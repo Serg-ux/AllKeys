@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="iTextSharp" Version="5.5.13.3" />
     <PackageReference Include="MaterialDesignColors" Version="2.1.1" />
     <PackageReference Include="MaterialDesignThemes" Version="4.7.1" />
     <PackageReference Include="MaterialDesignThemes.MahApps" Version="0.2.7" />
@@ -24,6 +25,7 @@
 
   <ItemGroup>
     <Resource Include="Allkeys-removebg-preview.png" />
+    <Resource Include="imagenes\Allkeys-removebg-preview.png" />
   </ItemGroup>
 
 </Project>

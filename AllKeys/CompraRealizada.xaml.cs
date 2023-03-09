@@ -1,5 +1,7 @@
-﻿using System;
+﻿using iTextSharp.text.pdf;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +30,18 @@ namespace AllKeys
         {
             
             this.Close();
+        }
+
+        private void btImprimir_Click(object sender, RoutedEventArgs e)
+        {
+            PrintDialog p = new PrintDialog();
+            if (p.ShowDialog() == true)
+            {
+                CompraPdf j = new CompraPdf();
+                //print es el nombre del grid global
+                p.PrintVisual(j.Print, "Ticket de compra");
+                j.Close();
+            }
         }
     }
 }
