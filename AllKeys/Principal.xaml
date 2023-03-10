@@ -21,6 +21,8 @@
                 <MenuItem Header="Cuenta" FontSize="20">
                     <MenuItem x:Name="perfil" Header="Perfil " FontSize="14" Icon="{materialDesign:PackIcon Kind=Account}" Click="perfil_Click"/>
                     <Separator />
+                    <MenuItem x:Name="Ayuda" Header="ayuda " FontSize="14" Icon="{materialDesign:PackIcon Kind=Help}" Click="Ayuda_Click"/>
+                    <Separator />
                     <MenuItem x:Name="salir" Header="Cerrar Sesión" FontSize="14" Icon="{materialDesign:PackIcon Kind=ExitToApp}" Click="salir_Click" />
 
 

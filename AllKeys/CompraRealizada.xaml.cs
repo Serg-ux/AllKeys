@@ -34,6 +34,7 @@ namespace AllKeys
 
         private void btImprimir_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
             PrintDialog p = new PrintDialog();
             if (p.ShowDialog() == true)
             {

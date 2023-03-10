@@ -82,6 +82,13 @@ namespace AllKeys
             AdminUser adminUser =new AdminUser();
             adminUser.Show();
             this.Close();
-        } 
+        }
+
+        private void Ayuda_Click(object sender, RoutedEventArgs e)
+        {
+            mostrarAyuda mostrar = new mostrarAyuda();
+            mostrar.ShowDialog();
+            this.Close();
+        }
     }
 }

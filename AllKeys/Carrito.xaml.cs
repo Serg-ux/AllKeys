@@ -33,8 +33,9 @@ namespace AllKeys
         {
             if (juegos_carrito.Count()>0)
             {
+
                 ValidarTarjeta validarTarjeta = new ValidarTarjeta();
-                validarTarjeta.Show();
+                validarTarjeta.ShowDialog();
             }
             else MessageBox.Show("Carrito vacio", "Informacion", MessageBoxButton.OK, MessageBoxImage.Warning);
 
