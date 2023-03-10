@@ -25,6 +25,9 @@
 
   <ItemGroup>
     <Resource Include="Allkeys-removebg-preview.png" />
+    <Resource Include="bin\Debug\net6.0-windows\Ayuda\MANUAL_USUARIO.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="imagenes\Allkeys-removebg-preview.png" />
   </ItemGroup>
 

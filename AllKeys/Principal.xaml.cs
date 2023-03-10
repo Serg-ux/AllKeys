@@ -2,6 +2,7 @@
 using ExamenVentas.DAL;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -86,9 +87,21 @@ namespace AllKeys
 
         private void Ayuda_Click(object sender, RoutedEventArgs e)
         {
-            mostrarAyuda mostrar = new mostrarAyuda();
-            mostrar.ShowDialog();
-            this.Close();
+            string fileName = "MANUAL_USUARIO.pdf";
+            string filePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Ayuda", fileName);
+
+            try
+            {
+                ProcessStartInfo psi = new ProcessStartInfo();
+                psi.FileName = "cmd";
+                psi.Arguments = $"/c start \"\" \"{filePath}\"";
+                psi.WindowStyle = ProcessWindowStyle.Hidden;
+                Process.Start(psi);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al abrir el archivo: " + ex.Message);
+            }
         }
     }
 }
