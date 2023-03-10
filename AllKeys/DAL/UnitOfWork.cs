@@ -10,6 +10,10 @@ namespace ExamenVentas.DAL
 {
     public class UnitOfWork : IDisposable
     {
+        public UnitOfWork() {
+            context.Database.EnsureCreated();
+        
+        }
         private VentasContext context = new VentasContext();
         private bool disposed = false;
 
