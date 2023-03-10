@@ -60,10 +60,15 @@ namespace AllKeys
                 String errores = Validacion.errores(usuario);
                 if (errores.Equals(""))
                 {
-                    bd.UsuariosRepository.Añadir(usuario);
-                    bd.Save();
-                    Limpiar();
-                    MessageBox.Show("Se creo el usuario correctamente", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                    Usuario usuarioEncontrado = bd.UsuariosRepository.ValidarUsuario(txtNombre.Text, txtTelefono.Text, txtContra.Text);
+                    if (usuarioEncontrado == null)
+                    {
+                        bd.UsuariosRepository.Añadir(usuario);
+                        bd.Save();
+                        Limpiar();
+                        MessageBox.Show("Se creo el usuario correctamente", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    else MessageBox.Show("Alguno de los datos ya está usado en la app", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 else
                 {

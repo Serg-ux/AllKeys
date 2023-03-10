@@ -28,5 +28,10 @@ namespace AllKeys.DAL
             return Get(u => u.UsuarioId == id).FirstOrDefault();
 
         }
+        public Usuario ValidarUsuario(string name, string telefono, string email)
+        {
+            return Get(u => u.UsuarioNombre.ToLower().Contains(name.ToLower()) || u.UsuarioTlf.ToLower().Contains(telefono.ToLower()) || u.UsuarioCorreo.ToLower().Contains(email.ToLower())).FirstOrDefault();
+
+        }
     }
 }
