@@ -1,4 +1,5 @@
 ﻿
+using AllKeys.DAL;
 using AllKeys.Modelo;
 using ExamenVentas.DAL;
 using System;
@@ -130,24 +131,28 @@ namespace AllKeys
             copia.VideojuegoId = videojuego.VideojuegoId;
             copia.CopiaCod = tbCodCopia.Text;
             String errores = Validacion.errores(copia);
-            if (errores.Equals(""))
+            if (dgVideojuegos.SelectedIndex != -1)
             {
-                if (new_copia)
+                if (errores.Equals(""))
                 {
-                    bd.CopiasRepository.Añadir(copia);
-                    bd.Save();
+                    if (new_copia)
+                    {
+                        bd.CopiasRepository.Añadir(copia);
+                        bd.Save();
 
+                    }
+                    else
+                    {
+                        bd.CopiasRepository.Update(copia);
+                        bd.Save();
+                    }
+                    Limpiar_Copia();
+                    dgCopias.ItemsSource = bd.CopiasRepository.CopiasFiltro(videojuego.VideojuegoId);
+                    MessageBox.Show("Guardado correctamente", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
-                else
-                {
-                    bd.CopiasRepository.Update(copia);
-                    bd.Save();
-                }
-                Limpiar_Copia();
-                dgCopias.ItemsSource = bd.CopiasRepository.GetAll();
-                MessageBox.Show("Guardado correctamente", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                else MessageBox.Show(errores, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            else MessageBox.Show(errores, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            else MessageBox.Show("no se ha seleccionado ningun videojuego", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 
         }
         private void Limpiar_Copia()
@@ -155,7 +160,7 @@ namespace AllKeys
             copia = new Copia();
             tbCodCopia.Text = copia.CopiaCod;
             new_copia = true;
-            dgCopias.ItemsSource = bd.CopiasRepository.GetAll();
+            dgCopias.ItemsSource = bd.CopiasRepository.CopiasFiltro(videojuego.VideojuegoId);
         }
 
         private void btnBorrarCopia_Click(object sender, RoutedEventArgs e)
@@ -170,7 +175,7 @@ namespace AllKeys
                     bd.CopiasRepository.Delete(copia);
                     bd.Save();
                     Limpiar_Copia();
-                    dgCopias.ItemsSource = bd.CopiasRepository.GetAll();
+                    dgCopias.ItemsSource = bd.CopiasRepository.CopiasFiltro(videojuego.VideojuegoId);
 
                 }
 
