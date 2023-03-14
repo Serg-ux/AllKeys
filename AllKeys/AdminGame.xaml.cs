@@ -127,6 +127,8 @@ namespace AllKeys
         }
         private void btnGuardarCopia_Click(object sender, RoutedEventArgs e)
         {
+            copia.VideojuegoId = videojuego.VideojuegoId;
+            copia.CopiaCod = tbCodCopia.Text;
             String errores = Validacion.errores(copia);
             if (errores.Equals(""))
             {
@@ -134,7 +136,6 @@ namespace AllKeys
                 {
                     bd.CopiasRepository.Añadir(copia);
                     bd.Save();
-                    dgCopias.ItemsSource = bd.CopiasRepository.GetAll();
 
                 }
                 else
@@ -142,7 +143,9 @@ namespace AllKeys
                     bd.CopiasRepository.Update(copia);
                     bd.Save();
                 }
-                    Limpiar_Copia();
+                Limpiar_Copia();
+                dgCopias.ItemsSource = bd.CopiasRepository.GetAll();
+                MessageBox.Show("Guardado correctamente", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else MessageBox.Show(errores, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 
@@ -152,17 +155,26 @@ namespace AllKeys
             copia = new Copia();
             tbCodCopia.Text = copia.CopiaCod;
             new_copia = true;
+            dgCopias.ItemsSource = bd.CopiasRepository.GetAll();
         }
 
         private void btnBorrarCopia_Click(object sender, RoutedEventArgs e)
         {
             if (dgCopias.SelectedIndex != -1)
             {
-                bd.CopiasRepository.Delete(copia);
-                bd.Save();
-                Limpiar_Copia();
-                dgCopias.ItemsSource = bd.CopiasRepository.GetAll();
-            }
+                if (MessageBox.Show("¿Seguro que desa borrar esta Copia?",
+                "Borrado",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                {
+                    bd.CopiasRepository.Delete(copia);
+                    bd.Save();
+                    Limpiar_Copia();
+                    dgCopias.ItemsSource = bd.CopiasRepository.GetAll();
+
+                }
+
+            } 
         }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {

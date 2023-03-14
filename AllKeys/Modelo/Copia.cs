@@ -19,7 +19,7 @@ namespace AllKeys.Modelo
         public virtual Videojuego Videojuego { get; set; }
         public int VideojuegoId { get; set; }
         public virtual UsuarioRegistrado UsuarioRegistrado { get; set; }
-        public int UsuarioRegistradoId { get; set; }
+        public int? UsuarioRegistradoId { get; set; }
         public Copia() { }
     }
 }

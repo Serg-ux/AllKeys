@@ -31,7 +31,7 @@
                 <DataGridTextColumn Header="Disponible" Binding="{Binding Path= Disponible}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="dgCopias" IsReadOnly="False" CanUserResizeColumns="False" CanUserResizeRows="False"  CanUserAddRows="False" HorizontalAlignment="Right" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,30,30,10" SelectionChanged="dgCopias_SelectionChanged">
+        <DataGrid x:Name="dgCopias" IsReadOnly="True" CanUserResizeColumns="False" CanUserResizeRows="False"  CanUserAddRows="False" HorizontalAlignment="Right" SelectionMode="Single" AutoGenerateColumns="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,30,30,10" SelectionChanged="dgCopias_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="70" Binding="{Binding  Path=CopiaId}"/>
                 <DataGridTextColumn Width="200" Header="Codigo" Binding="{Binding Path=CopiaCod}"/>

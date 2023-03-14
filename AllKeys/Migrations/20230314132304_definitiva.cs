@@ -102,7 +102,7 @@ namespace AllKeys.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CopiaCod = table.Column<string>(maxLength: 20, nullable: false),
                     VideojuegoId = table.Column<int>(nullable: false),
-                    UsuarioRegistradoId = table.Column<int>(nullable: false)
+                    UsuarioRegistradoId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
