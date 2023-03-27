@@ -150,7 +150,18 @@ namespace AllKeys
                     dgCopias.ItemsSource = bd.CopiasRepository.CopiasFiltro(videojuego.VideojuegoId);
                     MessageBox.Show("Guardado correctamente", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
+<<<<<<< HEAD
                 else MessageBox.Show(errores, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+=======
+                else
+                {
+                    bd.CopiasRepository.Update(copia);
+                    bd.Save();
+                }
+                Limpiar_Copia();
+                dgCopias.ItemsSource= bd.CopiasRepository.CopiasFiltro(videojuego.VideojuegoId);
+                MessageBox.Show("Guardado correctamente", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+>>>>>>> ba968d4186cc48dade95aa5100265a55f4477183
             }
             else MessageBox.Show("no se ha seleccionado ningun videojuego", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 
