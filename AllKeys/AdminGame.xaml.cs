@@ -1,4 +1,5 @@
 ﻿
+using AllKeys.DAL;
 using AllKeys.Modelo;
 using ExamenVentas.DAL;
 using System;
@@ -144,27 +145,35 @@ namespace AllKeys
                         bd.Save();
                     }
                     Limpiar_Copia();
-                }
-                else MessageBox.Show(errores, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            else MessageBox.Show("Seleccione un videojuego", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            else MessageBox.Show(errores, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+
         }
         private void Limpiar_Copia()
         {
             copia = new Copia();
             tbCodCopia.Text = copia.CopiaCod;
             new_copia = true;
+            dgCopias.ItemsSource = bd.CopiasRepository.CopiasFiltro(videojuego.VideojuegoId);
         }
 
         private void btnBorrarCopia_Click(object sender, RoutedEventArgs e)
         {
             if (dgCopias.SelectedIndex != -1)
             {
-                bd.CopiasRepository.Delete(copia);
-                bd.Save();
-                Limpiar_Copia();
-                dgCopias.ItemsSource = bd.CopiasRepository.GetAll();
-            }
+                if (MessageBox.Show("¿Seguro que desa borrar esta Copia?",
+                "Borrado",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                {
+                    bd.CopiasRepository.Delete(copia);
+                    bd.Save();
+                    Limpiar_Copia();
+                    dgCopias.ItemsSource = bd.CopiasRepository.CopiasFiltro(videojuego.VideojuegoId);
+
+                }
+
+            } 
         }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
