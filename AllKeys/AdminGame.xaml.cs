@@ -127,25 +127,27 @@ namespace AllKeys
         }
         private void btnGuardarCopia_Click(object sender, RoutedEventArgs e)
         {
-            String errores = Validacion.errores(copia);
-            if (errores.Equals(""))
-            {
-                if (new_copia)
+            if(dgCopias.SelectedIndex != -1) {
+                String errores = Validacion.errores(copia);
+                if (errores.Equals(""))
                 {
-                    bd.CopiasRepository.Añadir(copia);
-                    bd.Save();
-                    dgCopias.ItemsSource = bd.CopiasRepository.GetAll();
+                    if (new_copia)
+                    {
+                        bd.CopiasRepository.Añadir(copia);
+                        bd.Save();
+                        dgCopias.ItemsSource = bd.CopiasRepository.GetAll();
 
-                }
-                else
-                {
-                    bd.CopiasRepository.Update(copia);
-                    bd.Save();
-                }
+                    }
+                    else
+                    {
+                        bd.CopiasRepository.Update(copia);
+                        bd.Save();
+                    }
                     Limpiar_Copia();
+                }
+                else MessageBox.Show(errores, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            else MessageBox.Show(errores, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-
+            else MessageBox.Show("Seleccione un videojuego", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
         private void Limpiar_Copia()
         {
